@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="177" height="24" viewBox="0 0 177 24"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- 深色背景 -->
+  <rect width="177" height="24" fill="#1e1e1e" rx="4"/>
+
+  <!-- 三词同行：统一深灰 #52525C -->
+  <g transform="translate(10,17)">
+    <text y="0" font-family="serif" font-size="14" font-weight="bold" fill="#52525C">PKU</text>
+    <text y="0" x="32" font-family="Noto Sans SC, sans-serif" font-size="14" fill="#52525C">计算概论</text>
+    <text y="0" x="95" font-family="Courier New, monospace" font-size="14" font-style="italic" font-weight="bold" fill="#52525C">C</text>
+  </g>
+</svg>

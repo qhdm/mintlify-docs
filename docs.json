@@ -7,7 +7,7 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/jigai.svg",
   "navigation": {
     "tabs": [
       {
@@ -71,6 +71,11 @@
     "global": {
       "anchors": [
         {
+          "anchor": "OpenJudge",
+          "href": "http://jgcq.openjudge.cn",
+          "icon": "http://static.openjudge.cn/images/default_logo_small.png"
+        },
+        {
           "anchor": "Documentation",
           "href": "https://mintlify.com/docs",
           "icon": "book-open-cover"
@@ -89,8 +94,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light_jigai.svg",
+    "dark": "/logo/dark_jigai.svg"
   },
   "navbar": {
     "links": [

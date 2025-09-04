@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="140" height="140" viewBox="0 0 140 140"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- 圆形背景 -->
+  <circle cx="70" cy="70" r="67" fill="#ffffff" stroke="#003366" stroke-width="4"/>
+
+  <!-- 电脑 -->
+  <g transform="translate(16,37)">
+    <!-- 外壳 -->
+    <rect x="0" y="0" width="108" height="66" fill="#003366" rx="7"/>
+    <!-- 屏幕 -->
+    <rect x="6" y="6" width="96" height="52" fill="#ffffff" rx="5"/>
+    <!-- 文字：完全居中（x=48 为屏幕中心，y=31 为视觉基线） -->
+    <text x="48" y="31" text-anchor="middle" dominant-baseline="middle" font-family="Courier New" font-size="12" fill="#003366">print("Hi")</text>
+    <!-- 底座 -->
+    <rect x="39" y="66" width="30" height="6"  fill="#003366"/>
+    <rect x="30" y="72" width="48" height="4"  fill="#003366" rx="2"/>
+  </g>
+</svg>

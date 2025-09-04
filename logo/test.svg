@@ -1,0 +1,23 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="150" cy="150" r="145" fill="#f8f9fa" stroke="#003366" stroke-width="5"/>
+
+  <!-- 二进制背景装饰 -->
+  <text x="60" y="90" font-family="Courier New" font-size="12" fill="#003366" opacity="0.3">10101010</text>
+  <text x="200" y="220" font-family="Courier New" font-size="12" fill="#003366" opacity="0.3">01010101</text>
+
+  <!-- 主体文字：PKU 计算概论 C -->
+  <text x="150" y="120" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#003366">
+    PKU
+  </text>
+  <text x="150" y="160" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#007acc">
+    计算概论
+  </text>
+  <text x="150" y="195" font-family="Courier New, monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#007acc">
+    C
+  </text>
+
+  <!-- 代码符号装饰 -->
+  <text x="80" y="230" font-family="Courier New" font-size="28" fill="#003366" opacity="0.6">{ }</text>
+  <text x="200" y="230" font-family="Courier New" font-size="28" fill="#003366" opacity="0.6">;</text>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="177" height="24" viewBox="0 0 177 24"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 复用示例的三种渐变 -->
+    <linearGradient id="paint0_linear_17557_2020" x1="3.77557" y1="5.91571" x2="5.23185" y2="21.5589" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18E299"/>
+      <stop offset="1" stop-color="#15803D"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_17557_2020" x1="12.1711" y1="-0.718425" x2="10.1897" y2="22.9832" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16A34A"/>
+      <stop offset="1" stop-color="#4ADE80"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear_17557_2020" x1="23.1327" y1="15.353" x2="9.33841" y2="18.5196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ADE80"/>
+      <stop offset="1" stop-color="#0D9373"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景（可删） -->
+  <rect width="177" height="24" fill="#ffffff" rx="4"/>
+
+  <!-- 三词同行 -->
+  <g transform="translate(10,17)">
+    <!-- PKU：渐变绿 -->
+    <text y="0" font-family="serif" font-size="14" font-weight="bold" fill="url(#paint0_linear_17557_2020)">PKU</text>
+    <!-- 计算概论：渐变青绿 -->
+    <text y="0" x="32" font-family="Noto Sans SC, sans-serif" font-size="14" fill="url(#paint1_linear_17557_2020)">计算概论</text>
+    <!-- C：渐变蓝绿 -->
+    <text y="0" x="95" font-family="Courier New, monospace" font-size="14" font-style="italic" font-weight="bold" fill="url(#paint2_linear_17557_2020)">C</text>
+  </g>
+</svg>
