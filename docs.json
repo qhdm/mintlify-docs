@@ -57,6 +57,17 @@
         ]
       },
       {
+        "tab": "课程介绍",
+        "groups": [
+          {
+            "group": "API documentation",
+            "pages": [
+              "course_info/introduction"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API reference",
         "groups": [
           {
