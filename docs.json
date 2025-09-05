@@ -34,9 +34,9 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "API",
+            "group": "IDE安装及配置",
             "pages": [
-              "course_info/setup"
+              "guides/IDE安装及配置/VSCode的安装及配置（Mac系统）"
             ]
           }
         ]
@@ -61,7 +61,8 @@
               {
                 "group": "人工智能辅助的数据分析",
                 "pages": [
-                  "projects/2024F/人工智能辅助的数据分析/作业要求"
+                  "projects/2024F/人工智能辅助的数据分析/作业要求",
+                  "projects/2024F/人工智能辅助的数据分析/优秀作业"
                 ]
               }
             ]
