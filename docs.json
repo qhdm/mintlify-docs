@@ -23,9 +23,11 @@
         "tab": "课程介绍",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "课程相关信息",
             "pages": [
-              "course_info/introduction"
+              "course_info/关于本网站",
+              "course_info/课程简介/课程简介",
+              "course_info/实用网站推荐/实用网站推荐"
             ]
           }
         ]
@@ -36,7 +38,16 @@
           {
             "group": "IDE安装及配置",
             "pages": [
-              "guides/IDE安装及配置/VSCode的安装及配置（Mac系统）"
+              "guides/IDE安装及配置/VSCode的安装及配置（Mac系统）",
+              "guides/IDE安装及配置/VSCode的安装及配置（Windows系统）",
+              "guides/IDE安装及配置/PyCharm的安装及配置（Mac系统）",
+              "guides/IDE安装及配置/PyCharm的安装及配置（Windows系统）"
+            ]
+          },
+          {
+            "group": "相关工具推荐",
+            "pages": [
+              "guides/相关工具推荐/相关工具推荐"
             ]
           }
         ]
@@ -45,9 +56,9 @@
         "tab": "作业解析",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "2025秋",
             "pages": [
-              "course_info/introduction"
+              "homework/2025秋/作业解析"
             ]
           }
         ]
@@ -55,6 +66,12 @@
       {
         "tab": "大作业",
         "groups": [
+          {
+            "group": "2025秋",
+            "pages": [
+              "projects/2025F/2025秋季学期大作业"
+            ]
+          },
           {
             "group": "2024秋",
             "pages": [
