@@ -25,7 +25,6 @@
           {
             "group": "课程相关信息",
             "pages": [
-              "course_info/关于本网站",
               "course_info/课程简介/课程简介",
               "course_info/实用网站推荐/实用网站推荐"
             ]
