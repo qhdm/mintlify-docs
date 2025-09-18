@@ -1,19 +1,51 @@
 #### Windows
 
-1. **安装 Python**
-   - 步骤同 VSCode 部分。
+1. **安装 Miniconda**
+   - 打开 [Miniconda 官网](https://docs.conda.io/en/latest/miniconda.html)，下载 Windows 64-bit 安装包。
+   - **安装时一定要注意：**
+     - 勾选 *Add Miniconda3 to PATH environment variable*（如果有提示）。
+     - 或者选择 *Register Miniconda as the system Python 3.11*。
+   - 安装完成后，输入`win + r` 打开 **命令提示符 (CMD)** 或 **Anaconda Prompt**，输入：
+     ```bash
+     conda --version
+     ```
+     如果能看到版本号，说明安装成功。
 
-2. **安装 PyCharm**
-   - 前往 [PyCharm 官网](https://www.jetbrains.com/pycharm/download/) 下载 Windows 版本（选择 *Community* 免费版）。
+2. **检查系统路径 (PATH)**
+   - 如果 CMD 里输入 `conda` 提示“不是内部或外部命令”，说明 PATH 没有配置好。
+   - 解决方法：
+     1. 打开 **开始菜单** → 搜索 **环境变量** → 点击 **编辑系统环境变量**。
+     2. 在 **系统变量** 中找到 **Path** → 点击 **编辑**。
+     3. 添加以下路径（假设你安装在 `C:\Users\<你的用户名>\Miniconda3`）：
+        ```
+        C:\Users\<你的用户名>\Miniconda3
+        C:\Users\<你的用户名>\Miniconda3\Scripts
+        C:\Users\<你的用户名>\Miniconda3\Library\bin
+        ```
+     4. 点击 **确定** 保存，重新打开 CMD 测试：
+        ```bash
+        conda --version
+        ```
+
+3. **创建 Python 环境**
+   - 在 CMD 或 Anaconda Prompt 输入：
+     ```bash
+     conda create -n pycourse python=3.11
+     conda activate pycourse
+     ```
+
+
+4. **安装 PyCharm**
+   - 前往 [PyCharm 官网](https://www.jetbrains.com/pycharm/download/) 下载 Windows 版本。
    - 安装完成后，打开 PyCharm 并新建项目。
 
-3. **配置运行**
+
+5. **配置运行**
    - 新建文件 `hello.py`，输入：
      ```python
      print("Hello, Python!")
      ```
    - 点击运行，若能正确输出，则配置完成。
 
----
 
  
