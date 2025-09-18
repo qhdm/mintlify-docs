@@ -1,0 +1,16 @@
+### 1. Miniconda 安装后 CMD 无法识别 `conda` 命令怎么办？
+- 说明 PATH 没有配置好，请参考 Windows 部分的 **检查系统路径 (PATH)** 步骤。
+
+### 2. VSCode 里运行时找不到解释器怎么办？
+- 按 **Ctrl+Shift+P** → 输入 **Python: Select Interpreter** → 选择 `pycourse` 环境。
+
+### 3. Mac 上为什么用 `python3` 而不是 `python`？
+- 因为 Mac 系统自带一个老版本的 `python`（通常是 2.x），为了避免冲突，Miniconda 默认用 `python3`。
+
+### 4. 我可以不用 Miniconda，直接装 Python 吗？
+- 可以，但推荐 Miniconda，因为它能方便地管理环境，不会弄乱系统自带的 Python。
+
+### 5. 如何确认我的配置成功？
+- 在 VSCode 新建 `hello.py` 文件，写入：
+  ```python
+  print("Hello, Python!")
