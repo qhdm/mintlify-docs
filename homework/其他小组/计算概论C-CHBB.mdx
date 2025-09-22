@@ -1,0 +1,1562 @@
+
+# 自由练习题目
+<Card
+  title="计算概论C-CHBB / 自由练习题目"
+  icon="code"
+  href="http://jsglcbb.openjudge.cn/cpractice/"
+  horizontal
+>
+</Card>
+<AccordionGroup>
+    <Accordion title="01 大小写字母互换">
+    http://jsglcbb.openjudge.cn/cpractice/01/
+        ```python
+        # 01 大小写字母互换 Solution by Xuzheng Chen
+        T = [str(x) for x in input()]
+        for i in range(len(T)):
+            if T[i].isalpha():
+                if T[i].isupper():
+                    T[i] = T[i].lower()
+                else:
+                    T[i] = T[i].upper()
+        print("".join(T))
+        ```
+    </Accordion>
+    <Accordion title="02 骑车与走路">
+    http://jsglcbb.openjudge.cn/cpractice/02/
+    ```python
+    # 02 骑车与走路 Solution by Xuzheng Chen
+    n = int(input())
+    for i in range(n):
+        num = int(input())
+        if num/1.2 < num/3+50:
+            print("Walk")
+        elif num/1.2 == num/3+50:
+            print("All")
+        else:
+            print("Bike")
+    ```
+    </Accordion>
+    <Accordion title="03 校门外的树">
+    http://jsglcbb.openjudge.cn/cpractice/03/
+        ```python
+        # 03 校门外的树 Solution by Xuzheng Chen
+        L = input().split()
+        l = int(L[0]) + 1
+        m = int(L[1])
+        h = [1]
+        w = [0]
+        x = []
+        for i in range(l):
+            x += h
+        for i in range(m):
+            s, e = map(int, input().split())
+            t = e - s + 1
+            
+            v = []
+            for j in range(t):
+                v += w
+            x[s: e+1] = v
+        print(sum(x))
+        ```
+    </Accordion>
+    <Accordion title="04 奥运奖牌计数">
+    http://jsglcbb.openjudge.cn/cpractice/04/
+        ```python
+        # 04 奥运奖牌计数 Solution by Xuzheng Chen
+        n = int(input())
+        j = 0
+        y = 0
+        t = 0
+        for i in range(n):
+            a, b, c = [int(x) for x in input().split()]
+            j += a
+            y += b
+            t += c
+        print("{} {} {} {}".format(j, y, t, j+y+t))
+        ```
+    </Accordion>
+    <Accordion title="05 人民币支付">
+    http://jsglcbb.openjudge.cn/cpractice/05/
+        ```python
+        # 05 人民币支付 Solution by Xuzheng Chen
+        n = int(input())
+        for i in [100, 50, 20, 10, 5, 1]:
+            print(n // i)
+            n %= i
+        ```
+    </Accordion>
+    <Accordion title="06 单词倒排">
+    http://jsglcbb.openjudge.cn/cpractice/06/
+        ```python
+        # 06 单词倒排 Solution by Xuzheng Chen
+        s = input().split()
+        for ss in s[::-1]:
+            print(ss, end=" ")
+        ```
+    </Accordion>
+    <Accordion title="07 统计数字字符个数">
+    http://jsglcbb.openjudge.cn/cpractice/07/
+        ```python
+        # 07 统计数字字符个数 Solution by Xuzheng Chen
+        s = input()
+        print(len([c for c in s if c in "1234567890"]))
+        ```
+    </Accordion>
+    <Accordion title="08 点和正方形的关系">
+    http://jsglcbb.openjudge.cn/cpractice/08/
+        ```python
+        # 08 点和正方形的关系 Solution by Xuzheng Chen
+        x, y = map(int, input().split())
+        if -1 <= x <= 1 and -1 <= y <= 1:
+            print("yes")
+        else:
+            print("no")
+        ```
+    </Accordion>
+    <Accordion title="09 角谷猜想">
+    http://jsglcbb.openjudge.cn/cpractice/09/
+        ```python
+        # 09 角谷猜想 Solution by Xuzheng Chen
+        n = int(input())
+        while n != 1:
+            n = int(n)
+            if n % 2 == 0:
+                print("{}/2={}".format(n, int(n/2)))
+                n/=2
+            else:
+                print("{}*3+1={}".format(n, 3*n+1))
+                n = 3*n+1
+        print("End")
+        ```
+    </Accordion>
+    <Accordion title="10 找第一个只出现一次的字符">
+    http://jsglcbb.openjudge.cn/cpractice/10/
+        ```python
+        # 10 找第一个只出现一次的字符 Solution by Xuzheng Chen
+        l = input()
+        result = ""
+        for i in range(len(l)):
+            if (l[:i]+l[i+1:]).find(l[i]) == -1:
+                result = l[i]
+                break
+        if result != "":
+            print(result)
+        else:
+            print("no")
+        ```
+    </Accordion>
+    <Accordion title="11 字符菱形">
+    http://jsglcbb.openjudge.cn/cpractice/11/
+        ```python
+        # 11 字符菱形 Solution by Xuzheng Chen
+        s = input()
+        print("  "+s)
+        print(" "+s*3)
+        print(s*5)
+        print(" "+s*3)
+        print("  "+s)
+        ```
+    </Accordion>
+    <Accordion title="12 判断字符串是否为回文">
+    http://jsglcbb.openjudge.cn/cpractice/12/
+        ```python
+        # 12 判断字符串是否为回文 Solution by Xuzheng Chen
+        s = input()
+        if s[::-1] == s:
+            print("yes")
+        else:
+            print("no")
+        ```
+    </Accordion>
+    <Accordion title="13 奇偶数判断">
+    http://jsglcbb.openjudge.cn/cpractice/13/
+        ```python
+        # 13 奇偶数判断 Solution by Xuzheng Chen
+        n = int(input())
+        if n % 2 == 1:
+            print("odd")
+        else:
+            print("even")
+        ```
+    </Accordion>
+    <Accordion title="14 反向输出一个三位数">
+    http://jsglcbb.openjudge.cn/cpractice/14/
+        ```python
+        # 14 反向输出一个三位数 Solution by Xuzheng Chen
+        print(input()[::-1])
+        ```
+    </Accordion>
+    <Accordion title="15 求三个数的和">
+    http://jsglcbb.openjudge.cn/cpractice/15/
+        ```python
+        # 15 求三个数的和 Solution by Xuzheng Chen
+        a, b, c = [float(x) for x in input().split()]
+        if a + b + c == int(a + b + c):
+            print("{:.1f}".format(a+b+c))
+        else:
+            print(a+b+c)
+        ```
+    </Accordion>
+    <Accordion title="16 判断子串">
+    http://jsglcbb.openjudge.cn/cpractice/16/
+        ```python
+        # 16 判断子串 Solution by Xuzheng Chen
+        s1 = input()
+        s2 = input()
+        if s1 in s2:
+            print("YES")
+        else:
+            print("NO")
+        ```
+    </Accordion>
+    <Accordion title="17 最近点对">
+    http://jsglcbb.openjudge.cn/cpractice/17/
+        ```python
+        # 17 最近点对 Solution by Xuzheng Chen
+        T = int(input())
+        for t in range(T):
+            N = int(input())
+            point_list = [[int(x) for x in input().split()] for i in range(N)]
+            dis_list = [(point_list[i][0] - point_list[j][0])**2 + \
+                (point_list[i][1] - point_list[j][1])**2 for i in range(N) \
+                    for j in range(N) if i != j]
+            print(min(dis_list))
+        ```
+    </Accordion>
+    <Accordion title="18 回文数个数">
+    http://jsglcbb.openjudge.cn/cpractice/18/
+        ```python
+        # 18 回文数个数 Solution by Xuzheng Chen
+        n = int(input())
+        num_list = [1 for i in range(1, n+1) if str(i)[::-1] == str(i)]
+        print(sum(num_list))
+        ```
+    </Accordion>
+    <Accordion title="19 求n个数的和">
+    http://jsglcbb.openjudge.cn/cpractice/19/
+        ```python
+        # 19 求n个数的和 Solution by Xuzheng Chen
+        n = int(input())
+        num_list = [int(input()) for i in range(n)]
+        print(sum(num_list))
+        ```
+    </Accordion>
+    <Accordion title="20 多次求n个数的和">
+    http://jsglcbb.openjudge.cn/cpractice/20/
+        ```python
+        # 20 多次求n个数的和 Solution by Xuzheng Chen
+        m = int(input())
+        for mm in range(m):
+            n = int(input())
+            num_list = [int(input()) for i in range(n)]
+            print(sum(num_list))
+        ```
+    </Accordion>
+    <Accordion title="21 成绩排序">
+    http://jsglcbb.openjudge.cn/cpractice/21/
+        ```python
+        # 21 成绩排序 Solution by Xuzheng Chen
+        n = int(input())
+        grade_list = {}
+        for i in range(n):
+            name, grade = input().split()
+            grade_list[name] = int(grade)
+            
+        grade_list = {key: value for key, value in sorted(grade_list.items(), key = lambda x: (-x[1], x[0]))}
+        for key in grade_list.keys():
+            print("{} {}".format(key, grade_list[key]))
+        ```
+    </Accordion>
+    <Accordion title="22 病人排队">
+    http://jsglcbb.openjudge.cn/cpractice/22/
+        ```python
+        # 22 病人排队 Solution by Xuzheng Chen
+        n = int(input())
+        old = {}
+        young = {}
+        for nn, i in enumerate(range(n)):
+            num, age = input().split()
+            age = int(age)
+            if age >= 60:
+                old[num] = [nn, age]
+            else:
+                young[num] = age
+        old = {key: value for key, value in sorted(old.items(), key=lambda x: (-x[1][1], x[1][0]))}
+        for key in old.keys():
+            print(key)
+        for key in young.keys():
+            print(key)
+        ```
+    </Accordion>
+    <Accordion title="23 万年历">
+    http://jsglcbb.openjudge.cn/cpractice/23/
+        ```python
+        # 23 万年历 Solution by Xuzheng Chen
+        def isRun(y):
+            if y%4 == 0 and y%100 != 0:
+                return True
+            if y%100==0 and y %400==0:
+                return True
+            return False
+        def get_len(y, m, d):
+            total = 0
+            mon = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            total += (d - 18)
+            if m < 11:
+                for i in range(m, 11):
+                    total -= mon[i]
+            elif m > 11:
+                total += mon[11]
+            if y > 2020:
+                for i in range(2021, y+1):
+                    total += (365+isRun(i))
+            elif y < 2020:
+                for i in range(y+1, 2021):
+                    total -= (365+isRun(i))
+            if isRun(y) and m<=2:
+                total -= 1
+            return total
+        def pprint(n):
+            week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            print(week[n])
+            return
+        n = int(input())
+        for i in range(n):
+            y, m, d = [int(x) for x in input().split()]
+            mon = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            if not (1 <= m <= 12):
+                print("Illegal")
+            elif not (1 <= d <= mon[m]):
+                print("Illegal")
+            else:
+                pprint((get_len(y, m, d)%7+3)%7)
+        ```
+    </Accordion>
+    <Accordion title="24 单词使用频率统计">
+    http://jsglcbb.openjudge.cn/cpractice/24/
+        ```python
+        # 24 单词使用频率统计 Solution by Xuzheng Chen
+        lst = []
+        while True:
+            try:
+                s = input()
+                lst.append(s)
+            except Exception as e:
+                break
+                
+        import re
+        dic = {}
+        for s in lst:
+            s = re.split(":|,|\.|\?|\!|;|\"|\'| |\r|\t|\n|\(|\)",s)
+            for word in s:
+                word = word.lower()
+                if len(word) == 0: continue
+                if not word.isalpha(): continue
+                if word in dic:
+                    dic[word] += 1
+                else:
+                    dic[word] = 1
+
+        dic = {key: value for key, value in sorted(dic.items(), key=lambda x: x[0])}
+        for key in dic:
+            print("{}\t{}".format(key, dic[key]))
+        print("----")
+        dic = {key: value for key, value in sorted(dic.items(), key=lambda x: (-x[1], x[0]))}
+        for key in dic:
+            print("{}\t{}".format(key, dic[key]))
+        ```
+    </Accordion>
+    <Accordion title="25 校园食宿预订系统">
+    http://jsglcbb.openjudge.cn/cpractice/25/
+        ```python
+        # 25 校园食宿预订系统 Solution by Xuzheng Chen
+        n, m = [int(x) for x in input().split()]
+        value, quantity, number = {}, {}, {}
+        
+        for i in range(m):
+            veg = input().split()
+            value[veg[0]] = int(veg[1])
+            quantity[veg[0]] = int(veg[2])
+            number[veg[0]] = 0
+        
+        for i in range(n):
+            vegs = input().split()
+            for vegetable in vegs:
+                number[vegetable] += 1
+        
+        total = 0
+        for key in number.keys():
+            if number[key] <= quantity[key]:
+                total += (number[key]*value[key])
+            else:
+                total += (quantity[key]*value[key])
+        
+        print(total)
+        ```
+    </Accordion>
+    <Accordion title="26 打印任意年份任意月份的日历">
+    http://jsglcbb.openjudge.cn/cpractice/26/
+        ```python
+        # 26 打印任意年份任意月份的日历 Solution by Xuzheng Chen
+        def isRun(y):
+            if y%4 == 0 and y%100 != 0:
+                return True
+            if y%100==0 and y %400==0:
+                return True
+            return False
+        def get_len(y, m, d):
+            total = 0
+            mon = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            total += (d - 18)
+            if m < 11:
+                for i in range(m, 11):
+                    total -= mon[i]
+            elif m > 11:
+                total += mon[11]
+            if y > 2020:
+                for i in range(2021, y+1):
+                    total += (365+isRun(i))
+            elif y < 2020:
+                for i in range(y+1, 2021):
+                    total -= (365+isRun(i))
+            if isRun(y) and m<=2:
+                total -= 1
+            return total
+        def pprint(y, m):
+            week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+            mon = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            month = [0, "January","February", "March", "April", "May", "June", "July", "August", "September", "October","November", "December"]
+        
+            first = (get_len(y, m, 1)%7+3)%7
+            print(f"{month[m]},{y}")
+            print("Sun\tMon\tTue\tWed\tThu\tFri\tSat")
+            
+            for i in range(first):
+                print("\t",end="")
+            for i in range(1, 8-first):
+                print(f"{i}\t",end="")
+            print()
+            if isRun(y) and m == 2:
+                r = mon[m] - 8 + first + 1
+            else:
+                r = mon[m] - 8 + first
+            dd = 0
+            while r >= 0:
+                i += 1
+                if dd != 7 and r != 0:
+                    print(f"{i}\t", end="")
+                else:
+                    print(f"{i}", end="")
+                dd += 1
+                if dd == 7 and r != 0:
+                    dd = 0
+                    print()
+                if r == 0:
+                    print()
+                r -= 1
+            return
+        n = int(input())
+        for i in range(n):
+            y, m = [int(x) for x in input().split()]
+            pprint(y, m)
+        ```
+    </Accordion>
+    <Accordion title="27 计概成绩">
+    http://jsglcbb.openjudge.cn/cpractice/27/
+        ```python
+        # 27 计概成绩 Solution by Xuzheng Chen
+        n, m = [int(x) for x in input().split()]
+        def cal_gpa(n):
+            return 4-3*(100-n)**2/1600
+        stu_dic = {}
+        for t in range(n):
+            student = input().split()
+            stu_dic[student[0]] = cal_gpa(0.1*int(student[1])+0.4*int(student[2])+0.5*int(student[3]))
+        stu_dic = {key: value for key, value in sorted(stu_dic.items(), key=lambda x: (-x[1], x[0]))}
+        
+        cnt = 0
+        for key in stu_dic:
+            print(key, "{:.2f}".format(stu_dic[key]))
+            cnt += 1
+            if cnt == m:
+                break
+        ```
+    </Accordion>
+    <Accordion title="28 简单计算器">
+    http://jsglcbb.openjudge.cn/cpractice/28/
+        ```python
+        # 28 简单计算器 Solution by Xuzheng Chen
+        a, b, o = input().split()
+        a = int(a)
+        b = int(b)
+        if o == "+":
+            print(a+b)
+        elif o == "-":
+            print(a-b)
+        elif o == "*":
+            print(a*b)
+        elif o == "/":
+            if b == 0:
+                print("Divided by zero!")
+            else:
+                print(a//b)
+        else:
+            print("Invalid operator!")
+        ```
+    </Accordion>
+    <Accordion title="29 快速生成矩阵">
+    http://jsglcbb.openjudge.cn/cpractice/29/
+        ```python
+        # 29 快速生成矩阵 Solution by Xuzheng Chen
+        s = input().split()
+        m ,n = int(s[0]),int(s[1])
+        matrix = \
+        [[i*n+j+1 for j in range(n)] for i in range(m)]
+        for i in range(m):
+            for j in range(n):
+                print(matrix[i][j],end = " ")
+            print("")
+        ```
+    </Accordion>
+    <Accordion title="30 学生排序">
+    http://jsglcbb.openjudge.cn/cpractice/30/
+        ```python
+        # 30 学生排序 Solution by Xuzheng Chen
+        students = [('John', 'A', 15), # 姓名，成绩，年龄
+        		('Mike', 'B', 12),
+        		('Mike', 'C', 18),
+        		('Bom', 'D', 10)]
+        (x,y,z) = tuple(input().split())
+        students.append((x,y,int(z)))
+        students.sort(key = \
+        lambda x: x[2])
+        print(students)
+        ```
+    </Accordion>
+    <Accordion title="31 会议室时间安排">
+    http://jsglcbb.openjudge.cn/cpractice/31/
+        ```python
+        # 31 会议室时间安排 Solution by Xuzheng Chen
+        n = int(input())
+        dic = {}
+        for i in range(n):
+            s = input().split()
+            dic[s[0]] = int(s[1])
+        dic = {key: value for key, value in sorted(dic.items(), key=lambda x: x[1])}
+        for key in dic:
+            print(key, dic[key])
+        ```
+    </Accordion>
+    <Accordion title="32 字符串交换">
+    http://jsglcbb.openjudge.cn/cpractice/32/
+        ```python
+        # 32 字符串交换 Solution by Xuzheng Chen
+        a = input()
+        b = input()
+        print(b[:2]+a[2:])
+        print(a[:2]+b[2:])
+        ```
+    </Accordion>
+    <Accordion title="33 跳水比赛计分">
+    http://jsglcbb.openjudge.cn/cpractice/33/
+        ```python
+        # 33 跳水比赛计分 Solution by Xuzheng Chen
+        n = int(input())
+        dic = {}
+        for i in range(n):
+            ss = input().split()
+            if ss[0] not in dic:
+                dic[ss[0]] = [int(ss[1])]
+            else:
+                dic[ss[0]].append(int(ss[1]))
+            print(int(sum(dic[ss[0]])/len(dic[ss[0]])))
+        ```
+    </Accordion>
+    <Accordion title="34 猫吃鱼">
+    http://jsglcbb.openjudge.cn/cpractice/34/
+        ```python
+        # 34 猫吃鱼 Solution by Xuzheng Chen
+        while True:
+            try:
+                m, n, x = [int(t) for t in input().split()]
+                speed = [int(t) for t in input().split()]
+                speed = sorted(speed)
+                eat = [0 for i in range(n)]
+                for i in range(x):
+                    while (m > 0 and eat.count(0)!=0):
+                        eat[eat.index(0)] = 1
+                        m -= 1
+                    eat = [eat[i]-1/speed[i] for i in range(len(eat))]
+                    for i in range(len(eat)):
+                        if eat[i] <= 1e-4:
+                            eat[i] = 0
+                    
+                print(m, len(eat)-eat.count(0))
+            except Exception as e:
+                break
+        ```
+    </Accordion>
+    <Accordion title="35 藏头诗">
+    http://jsglcbb.openjudge.cn/cpractice/35/
+        ```python
+        # 35 藏头诗 Solution by Xuzheng Chen
+        while True:
+            try:
+                n = int(input())
+                s = [[c for c in input()] for i in range(n)]
+                tmp = []
+                for ss in range(2*n-1):
+                    for i in range(ss+1):
+                        if ss&1 and i < n and ss-i < n:
+                            tmp.append(s[i][ss-i])
+                        if not ss&1 and i < n and ss-i < n:
+                            tmp.append(s[ss-i][i])
+                l, r, u, d = 0, n-1, 0, n-1
+                ttmp = [[0 for i in range(n)] for j in range(n)]
+                ii = 0
+                cnt = l
+                direction = "r"
+                while ii != n**2:
+                    if direction == "r":
+                        ttmp[u][cnt] = tmp[ii]
+                        if cnt != r:
+                            cnt += 1
+                        else:
+                            direction = "d"
+                            u += 1
+                            cnt = u
+                        ii += 1
+                    elif direction == "d":
+                        ttmp[cnt][r] = tmp[ii]
+                        if cnt != d:
+                            cnt += 1
+                        else:
+                            direction = "l"
+                            r -= 1
+                            cnt = r
+                        ii += 1
+                    elif direction == "l":
+                        ttmp[d][cnt] = tmp[ii]
+                        if cnt != l:
+                            cnt -= 1
+                        else:
+                            direction = "u"
+                            d -= 1
+                            cnt = d
+                        ii += 1
+                    elif direction == "u":
+                        ttmp[cnt][l] = tmp[ii]
+                        if cnt != u:
+                            cnt -= 1
+                        else:
+                            direction = "r"
+                            l += 1
+                            cnt = l
+                        ii += 1
+                for i in range(n):
+                    for j in range(n):
+                        print(ttmp[i][j], end="")
+                    print()
+            except Exception as e:
+                break
+        ```
+    </Accordion>
+    <Accordion title="36 多少种取法">
+    http://jsglcbb.openjudge.cn/cpractice/36/
+        ```python
+        # 36 多少种取法 Solution by Xuzheng Chen
+        T = int(input())
+        def func(m, n, s):
+            if s == 0 and n != 0:
+                return 0
+            if s == 0 and n == 0:
+                return 1
+            if n == 1 and m >= s:
+                return 1
+            if n == 1 and m < s:
+                return 0
+            if m < n:
+                return 0
+            if m == 0 and not (n == 0 and s == 0):
+                return 0
+            if s < m:
+                return func(s, n, s)
+            else:
+                return (func(m-1, n-1, s-m) + func(m-1, n, s))
+        for t in range(T):
+            m, n, s = [int(x) for x in input().split()]
+            print(func(m, n, s))
+        ```
+    </Accordion>
+    <Accordion title="37 字符串中的整数求和">
+    http://jsglcbb.openjudge.cn/cpractice/37/
+        ```python
+        # 37 字符串中的整数求和 Solution by Xuzheng Chen
+        a, b = input().split()
+        a = int(a[:2])
+        b = int(b[:2])
+        print(a+b)
+        ```
+    </Accordion>
+    <Accordion title="38 寻找中位数">
+    http://jsglcbb.openjudge.cn/cpractice/38/
+        ```python
+        # 38 寻找中位数 Solution by Xuzheng Chen
+        T = int(input())
+        for t in range(T):
+            N = int(input())
+            nums = []
+            for i in range(N):
+                nums.append(int(input()))
+            nums = sorted(nums)
+            if len(nums)&1:
+                print(nums[int((len(nums)-1)/2)])
+            else:
+                print((nums[int(len(nums)/2)]+nums[int(len(nums)/2-1)])/2)
+        ```
+    </Accordion>
+    <Accordion title="39 找出全部子串位置">
+    http://jsglcbb.openjudge.cn/cpractice/39/
+        ```python
+        # 39 找出全部子串位置 Solution by Xuzheng Chen
+        n = int(input())
+        for i in range(n):
+            s1, s2 = input().split()
+            temp = 0
+            if s1.find(s2) == -1:
+                print("no", end=" ")
+            while s1[temp:].find(s2) != -1:
+                print(s1[temp:].find(s2)+temp, end=" ")
+                temp = s1[temp:].find(s2)+len(s2)+temp
+            
+            print()
+        ```
+    </Accordion>
+    <Accordion title="40 最简单的单词">
+    http://jsglcbb.openjudge.cn/cpractice/40/
+        ```python
+        # 40 最简单的单词 Solution by Xuzheng Chen
+        T = int(input())
+        for t in range(T):
+            N = int(input())
+            dic = {}
+            for i in range(10*N):
+                s = input().split()
+                if s[0] not in dic:
+                    dic[s[0]] = [int(s[1])]
+                else:
+                    dic[s[0]].append(int(s[1]))
+            for key in dic:
+                dic[key] = sum(dic[key])/len(dic[key])
+            dic = {key: value for key, value in sorted(dic.items(), key=lambda x: x[1])}
+            for key in dic:
+                print(key)
+                break
+        ```
+    </Accordion>
+    <Accordion title="41 统计质数个数">
+    http://jsglcbb.openjudge.cn/cpractice/41/
+        ```python
+        # 41 统计质数个数 Solution by Xuzheng Chen
+        n, m = map(int, input().split())
+        from math import sqrt
+        def isprime(x):
+            if x == 1:
+                return 0
+            for i in range(2, int(sqrt(x))+1):
+                if x % i == 0:
+                    return 0
+            return 1
+        print(len([i for i in range(n, m+1) if isprime(i)]))
+        ```
+    </Accordion>
+    <Accordion title="42 高级口令">
+    http://jsglcbb.openjudge.cn/cpractice/42/
+        ```python
+        # 42 高级口令 Solution by Xuzheng Chen
+        s = input()
+        s = s[:s.find("*")+1]
+        num1 = len([c for c in s if c in "0123456789"])
+        num2 = len([c for c in s if c in "qwertyuiopasdfghjklzxcvbnm"])
+        num3 = len([c for c in s if c in "QWERTYUIOPASDFGHJKLZXCVBNM"])
+        num4 = len(s) - num1 - num2 - num3
+        
+        print(num1)
+        print(num2)
+        print(num3)
+        print(num4)
+        ```
+    </Accordion>
+    <Accordion title="43 八戒学算术">
+    http://jsglcbb.openjudge.cn/cpractice/43/
+        ```python
+        # 43 八戒学算术 Solution by Xuzheng Chen
+        n = int(input())
+        nums = [int(x) for x in input().split()]
+        print(max(nums), min(nums), "{:.2f}".format(sum(nums)/len(nums)))
+        ```
+    </Accordion>
+    <Accordion title="44 商品评分">
+    http://jsglcbb.openjudge.cn/cpractice/44/
+        ```python
+        # 44 商品评分 Solution by Xuzheng Chen
+        n = int(input())
+        for t in range(n):
+            num = int(input())
+            fruit_dict = {}
+            for i in range(num):
+                s = input()
+                nums = [int(x) for x in s[s.find(" ")+1:].split()]
+                fruit_dict[s[:s.find(" ")]] = (nums, sum(nums)/len(nums))
+            fruit_dict = {key: value for key, value in sorted(fruit_dict.items(), key=lambda x: (x[1][1], len(x[1][0])), reverse=True)}
+            for key in fruit_dict.keys():
+                print(key)
+        ```
+    </Accordion>
+    <Accordion title="45 字符计数">
+    http://jsglcbb.openjudge.cn/cpractice/45/
+        ```python
+        # 45 字符计数 Solution by Xuzheng Chen
+        n = int(input())
+        for t in range(n):
+            s = input()
+            ffind = input().split()
+            for ss in ffind:
+                print(ss.lower().count(s.lower()), end=" ")
+            print()
+        ```
+    </Accordion>
+    <Accordion title="46 好数坏数">
+    http://jsglcbb.openjudge.cn/cpractice/46/
+        ```python
+        # 46 好数坏数 Solution by Xuzheng Chen
+        n = int(input())
+        if n % 35 == 0:
+            print("best")
+        elif n % 5 == 0:
+            print("good")
+        else:
+            print("bad")
+        ```
+    </Accordion>
+    <Accordion title="47 买手办">
+    http://jsglcbb.openjudge.cn/cpractice/47/
+        ```python
+        # 47 买手办 Solution by Xuzheng Chen
+        print(sum([int(x) for x in input().split() if int(x)<=60]))
+        ```
+    </Accordion>
+    <Accordion title="48 纸币兑换硬币">
+    http://jsglcbb.openjudge.cn/cpractice/48/
+        ```python
+        # 48 纸币兑换硬币 Solution by Xuzheng Chen
+        x, y, z = [int(x) for x in input().split()]
+        ycount = (10*x) // y + 1
+        zcount = (10*x) // z + 1
+        cnt = 0
+        for i in range(1, ycount):
+            for j in range(1, zcount):
+                if i * y + j * z == 10 * x:
+                    cnt += 1
+        print(cnt)
+        ```
+    </Accordion>
+    <Accordion title="49 物资统计">
+    http://jsglcbb.openjudge.cn/cpractice/49/
+        ```python
+        # 49 物资统计 Solution by Xuzheng Chen
+        n = int(input())
+        dic = {}
+        for i in range(n):
+            s = input().split()
+            if s[1] not in dic:
+                dic[s[1]] = int(s[0])
+            else:
+                dic[s[1]] += int(s[0])
+        dic = {key: value for key, value in sorted(dic.items(), key=lambda x: x[0])}
+        for i in dic:
+            print(i, dic[i])
+        ```
+    </Accordion>
+    <Accordion title="50 医院负荷">
+    http://jsglcbb.openjudge.cn/cpractice/50/
+        ```python
+        # 50 医院负荷 Solution by Xuzheng Chen
+        N = int(input())
+        def get_max(dic):
+            return max([len(value) for key, value in dic.items()])
+        for NN in range(N):
+            hos_dict = {}
+            pat_dict = {}
+            m = int(input())
+            hos_max = 0
+            for i in range(m):
+                idd, num = [int(x) for x in input().split()]
+                if num != -1 and num not in hos_dict: 
+                    hos_dict[num] = [idd]
+                    pat_dict[idd] = num
+                elif num in hos_dict: 
+                    hos_dict[num].append(idd)
+                    pat_dict[idd] = num
+                else:
+                    hos_dict[pat_dict[idd]].remove(idd)
+                    pat_dict[idd] = num
+                hos_max = max(get_max(hos_dict), hos_max)
+                
+            print(hos_max)
+        ```
+    </Accordion>
+    <Accordion title="51 矩阵换行求边缘和">
+    http://jsglcbb.openjudge.cn/cpractice/51/
+        ```python
+        # 51 矩阵换行求边缘和 Solution by Xuzheng Chen
+        m, n = [int(x) for x in input().split()]
+        matrix = [[int(x) for x in input().split()] for i in range(m)]
+        x, y = [int(x) for x in input().split()]
+        tmp = matrix[x-1]
+        matrix[x-1] = matrix[y-1]
+        matrix[y-1] = tmp
+        ssum = 0
+        for i in range(n):
+            ssum += (matrix[0][i] + matrix[m-1][i])
+        for i in range(m):
+            ssum += (matrix[i][0] + matrix[i][n-1])
+        ssum -= (matrix[0][0] + matrix[m-1][n-1] + matrix[m-1][0] + matrix[0][n-1])
+        print(ssum)
+        ```
+    </Accordion>
+    <Accordion title="52 很简单的整数划分问题">
+    http://jsglcbb.openjudge.cn/cpractice/52/
+        ```python
+        # 52 很简单的整数划分问题 Solution by Xuzheng Chen
+        def func(n, m):
+            if m == 1:
+                return 1
+            elif m > n:
+                return func(n, n)
+            elif n == m:
+                return func(n, n-1) + 1
+            else:
+                return func(n, m-1) + func(n-m, m)
+        n = int(input())
+        print(func(n, n))
+        ```
+    </Accordion>
+    <Accordion title="53 身份证校验">
+    http://jsglcbb.openjudge.cn/cpractice/53/
+        ```python
+        # 53 身份证校验 Solution by Xuzheng Chen
+        n = int(input())
+        for i in range(n):
+            s = [x for x in input()]
+            if s[-1] == "X":
+                s[-1] = "10"
+            s = [int(x) for x in s]
+            ssum = 0
+            pp = 2**17
+            for i in range(18):
+                ssum += (pp * s[i])
+                pp /= 2
+            if ssum%11 == 1:
+                print("YES")
+            else:
+                print("NO")
+        ```
+    </Accordion>
+    <Accordion title="54 凯撒密码">
+    http://jsglcbb.openjudge.cn/cpractice/54/
+        ```python
+        # 54 凯撒密码 Solution by Xuzheng Chen
+        mode = input()
+        key = int(input())
+        msg = input()
+        if mode in ['e', 'E', 'encrypt', 'Encrypt']:
+            for i in range(len(msg)):
+                if ord(msg[i])>=ord('a') and ord(msg[i])<=ord('z'):
+                    print(chr((ord(msg[i])+key-ord('a'))%26+ord('a')),end='')
+                elif ord(msg[i])>=ord('A') and ord(msg[i])<=ord('Z'):
+                    print(chr((ord(msg[i]) + key - ord('A')) % 26 + ord('A')), end='')
+                elif ord(msg[i])>=ord('0') and ord(msg[i])<=ord('9'):
+                    print(chr((ord(msg[i])+key-ord('0'))%10+ord('0')),end='')
+                else:
+                    print(msg[i],end='')
+        elif mode in ['d', 'D', 'decrypt', 'Decrypt']:
+            for i in range(len(msg)):
+                if ord(msg[i])>=ord('a') and ord(msg[i])<=ord('z'):
+                    print(chr((ord(msg[i])-key-ord('a'))%26+ord('a')),end='')
+                elif ord(msg[i])>=ord('A') and ord(msg[i])<=ord('Z'):
+                    print(chr((ord(msg[i]) - key - ord('A')) % 26 + ord('A')), end='')
+                elif ord(msg[i])>=ord('0') and ord(msg[i])<=ord('9'):
+                    print(chr((ord(msg[i])-key-ord('0'))%10+ord('0')),end='')
+                else:
+                    print(msg[i],end='')
+        else:
+            print("Wrong Mode")
+        ```
+    </Accordion>
+    <Accordion title="55 数列求和">
+    http://jsglcbb.openjudge.cn/cpractice/55/
+        ```python
+        # 55 数列求和 Solution by Xuzheng Chen
+        n = int(input())
+        print("{:.6f}".format(sum([float(1/i) for i in range(1,n+1) if i%2 == n%2])))
+        ```
+    </Accordion>
+    <Accordion title="56 删除子串">
+    http://jsglcbb.openjudge.cn/cpractice/56/
+        ```python
+        # 56 删除子串 Solution by Xuzheng Chen
+        s1, s2, n = input().split()
+        if s1.find(s2) == -1:
+            print("Fail to delete")
+        else:
+            if n == "1":
+                s1 = s1.replace(s2, "")
+                print(s1)
+            elif n == "0":
+                ss = s1.split(s2)
+                sss = ss[0]
+                sss += s2.join(ss[1:])
+                print(sss)
+        ```
+    </Accordion>
+    <Accordion title="57 身份证有效性验证">
+    http://jsglcbb.openjudge.cn/cpractice/57/
+        ```python
+        # 57 身份证有效性验证 Solution by Xuzheng Chen
+        ID = input()
+        if len(ID) != 18:
+            print("illegal")
+        elif not ID[:17].isdigit():
+            print("illegal")
+        else:
+            IDD= [int(x) for x in ID[:-1]]
+            index = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
+            exam = ["1", "0", "X", "9", "8", "7", "6", "5", "4", "3", "2"]
+            ssum = 0
+            for i in range(17):
+                ssum += IDD[i] * index[i]
+            ssum = ssum % 11
+            if exam[ssum] != ID[-1]:
+                print("illegal")
+            else:
+                if IDD[-1] %2 == 1:
+                    print("male")
+                else:
+                    print("female")
+        ```
+    </Accordion>
+    <Accordion title="58 统计成绩">
+    http://jsglcbb.openjudge.cn/cpractice/58/
+        ```python
+        # 58 统计成绩 Solution by Xuzheng Chen
+        n = int(input())
+        for i in range(n):
+            score = [float(x) for x in input().split()]
+            print("{:.1f} {:.1f}".format(sum(score), sum(score)/len(score)))
+        ```
+    </Accordion>
+    <Accordion title="59 列表练习">
+    http://jsglcbb.openjudge.cn/cpractice/59/
+        ```python
+        # 59 列表练习 Solution by Xuzheng Chen
+        L = [int(x) for x in input().split()]
+        x, y = [int(x) for x in input().split()]
+        L = L[:1] + [x] + L[1:]
+        print(L)
+        L = L[1:]
+        print(L)
+        L = L[3:]
+        print(L)
+        if 0 in L:
+            print("True")
+        else:
+            print("False")
+        L.append(y)
+        print(L)
+        print(len(L))
+        print(max(L))
+        ```
+    </Accordion>
+    <Accordion title="60 字典练习">
+    http://jsglcbb.openjudge.cn/cpractice/60/
+        ```python
+        # 60 字典练习 Solution by Xuzheng Chen
+        pairs = input().split(",")
+        D = {p.split()[0]: int(p.split()[1]) for p in pairs}
+        npairs = input().split(",")
+        v = int(input())
+        
+        for pair in npairs:
+            key,value = pair.split()
+            D[key]=int(value)
+        
+        D['a']=v
+        
+        print('c' in D.keys())
+        print(0 in D.values())
+        print(('b',1) in D.items())
+        ```
+    </Accordion>
+    <Accordion title="61 找出所有整数">
+    http://jsglcbb.openjudge.cn/cpractice/61/
+        ```python
+        # 61 找出所有整数 Solution by Xuzheng Chen
+        import re
+        m = "\d+"
+        while True:
+            try:
+                s = input()
+                lst = re.findall(m,s)
+                for x in lst:
+                    print(x)
+            except:
+                break
+        ```
+    </Accordion>
+    <Accordion title="62 找出所有整数和小数">
+    http://jsglcbb.openjudge.cn/cpractice/62/
+        ```python
+        # 62 找出所有整数和小数 Solution by Xuzheng Chen
+        import re
+        m = "\d+\.\d+|\d+"
+        while True:
+            try:
+                s = input()
+                lst = re.findall(m,s)
+                for x in lst:
+                    print(x)
+            except:
+                break
+        ```
+    </Accordion>
+    <Accordion title="63 找出小于100的整数">
+    http://jsglcbb.openjudge.cn/cpractice/63/
+        ```python
+        # 63 找出小于100的整数 Solution by Xuzheng Chen
+        import re
+        m = r"(^|[^0-9-])(\d{1,2})([^0-9]|$)"
+        for i in range(2):
+                s = input()
+                lst = re.findall(m,s)
+                for x in lst:
+                    print(x[1])
+        ```
+    </Accordion>
+    <Accordion title="64 密码判断">
+    http://jsglcbb.openjudge.cn/cpractice/64/
+        ```python
+        # 64 密码判断 Solution by Xuzheng Chen
+        import re
+        m='[A-Za-z][-A-Za-z0-9_]{7,}\Z'
+        while True:
+            try:
+                s = input()
+                if re.match(m,s) != None:
+                    print("yes")
+                else:
+                    print("no")
+            except:
+                break
+        ```
+    </Accordion>
+    <Accordion title="65 寻找h3">
+    http://jsglcbb.openjudge.cn/cpractice/65/
+        ```python
+        # 65 寻找h3 Solution by Xuzheng Chen
+        import re
+        m = \
+        '<h3>(.*?)</h3>'
+        for x in  re.findall(m,"cdef<h3>abd</h3><h3>bcK</h3><h3>123</h3>KJM"):
+            print(x)
+        ```
+    </Accordion>
+    <Accordion title="66 找<>中的数">
+    http://jsglcbb.openjudge.cn/cpractice/66/
+        ```python
+        # 66 找<>中的数 Solution by Xuzheng Chen
+        import re
+        m='<(0|[1-9][0-9]{0,2})>'
+        n=int(input())
+        for i in range(n):
+            s=input()
+            result=re.findall(m,s)
+            if len(result) == 0:
+                print("NONE")
+            else:
+                print(" ".join(result))
+        ```
+    </Accordion>
+    <Accordion title="67 电话号码">
+    http://jsglcbb.openjudge.cn/cpractice/67/
+        ```python
+        # 67 电话号码 Solution by Xuzheng Chen
+        import re
+        n=int(input())
+        isfirstprint=True
+        for j in range(n):
+            s = input()
+            m = '<(.+?)>(.*?)</\\1>'
+            result = re.findall(m, s)
+            if len(result) == 0:
+                if not isfirstprint:
+                    print("\n",end="")
+                print("NONE",end="")
+                isfirstprint=False
+            else:
+                isNone = True
+                for x in result:
+                    m = '\\([0-9]{1,2}\\)-[0-9]{3,}'
+                    phone_maybe = re.findall(m, x[1])
+                    if len(phone_maybe) == 0:
+                        continue
+                    else:
+                        phone = []
+                        for tmp in phone_maybe:
+                            if len(re.findall('-[0-9]+', tmp)[0]) < 5:
+                                phone += re.findall('\\(([0-9]{1,2})\\)-[0-9]{3,}', tmp)
+                        if len(phone) > 0:
+                            isNone=False
+                            if not isfirstprint:
+                                print("")
+                            isfirstprint=False
+                            print("<" + x[0] + ">", end="")
+                            isFirstPrinthere=True
+                            for tt in phone:
+                                if not isFirstPrinthere:
+                                    print(",", end="")
+                                print(tt, end="")
+                                isFirstPrinthere=False
+                            print("</" + x[0] + ">",end="")
+                if isNone==True:
+                    if not isfirstprint:
+                        print("")
+                    print("NONE",end="")
+                    isfirstprint=False
+        ```
+    </Accordion>
+    <Accordion title="68 检查美元">
+    http://jsglcbb.openjudge.cn/cpractice/68/
+        ```python
+        # 68 检查美元 Solution by Xuzheng Chen
+        import re
+        m = "\$[1-9]\d{0,2}(,\d{3})*\$"
+        mm = "\$[1-9]\d*\$"
+        while True:
+            try:
+                s = input()
+                if (len(re.findall(m, s)) == 0 or re.findall(m, s) is None) and (len(re.findall(mm, s)) == 0\
+                    or re.findall(mm, s) is None):
+                    print("no")
+                else:
+                    print("yes")
+            except Exception as e:
+                break
+        ```
+    </Accordion>
+    <Accordion title="69 寻找工作报告中的数据">
+    http://jsglcbb.openjudge.cn/cpractice/69/
+        ```python
+        # 69 寻找工作报告中的数据 Solution by Xuzheng Chen
+        import re
+        m = r"(\d+\.\d+%|\d+%|\d+\.\d+|\d+)"
+        while True:
+            try:
+                s = input()
+                lst = re.findall(m,s)
+                for x in lst:
+                    print(x)
+            except:
+                break
+        ```
+    </Accordion>
+    <Accordion title="70 括号内的信息">
+    http://jsglcbb.openjudge.cn/cpractice/70/
+        ```python
+        # 70 括号内的信息 Solution by Xuzheng Chen
+        import re
+        exit = 10   #此句没用
+        n = int(input())
+        #填空内容应为 pt = "XXXX"，即写一个正则表达式pt
+        
+        pt=r"[(](.*?)[)]"
+         
+        
+        for i in range(n):
+            s = input()
+            k = re.findall(pt,s)
+            if k:
+                for x in k:
+                    print(x, end = " ")
+                print("")
+            else:
+                print("NONE")
+        ```
+    </Accordion>
+    <Accordion title="71 房间转移（基础版）">
+    http://jsglcbb.openjudge.cn/cpractice/71/
+        ```python
+        # 71 房间转移（基础版） Solution by Xuzheng Chen
+        def func(n):
+            if n == 1:
+                return 1
+            if n == 2:
+                return 2
+            return func(n-1) + func(n-2)
+        
+        n = int(input())
+        print(func(n))
+        ```
+    </Accordion>
+    <Accordion title="72 递归复习法">
+    http://jsglcbb.openjudge.cn/cpractice/72/
+        ```python
+        # 72 递归复习法 Solution by Xuzheng Chen
+        def func(n):
+            if n == 1:
+                return 1
+            if n == 2:
+                return 2
+            return n + func(n-1) + func(n-2)
+        n = int(input())
+        for i in range(n):
+            m = int(input())
+            print(func(m))
+        ```
+    </Accordion>
+    <Accordion title="73 求斐波那契数列第k项">
+    http://jsglcbb.openjudge.cn/cpractice/73/
+        ```python
+        # 73 求斐波那契数列第k项 Solution by Xuzheng Chen
+        import math
+        
+        def fibonacci(n):
+            phi = (1 + math.sqrt(5)) / 2
+            return round((phi**n - (1 - phi)**n) / math.sqrt(5))
+        print(fibonacci(int(input())))
+        ```
+    </Accordion>
+    <Accordion title="74 汉诺塔问题">
+    http://jsglcbb.openjudge.cn/cpractice/74/
+        ```python
+        # 74 汉诺塔问题 Solution by Xuzheng Chen
+        def func(n, a, b, c):
+            if n == 1:
+                print(f"{a}->{c}")
+            else:
+                func(n-1, a, c, b)
+                print(f"{a}->{c}")
+                func(n-1, b, a, c)
+        n = int(input())
+        func(n, "A", "B", "C")
+        ```
+    </Accordion>
+    <Accordion title="75 上台阶">
+    http://jsglcbb.openjudge.cn/cpractice/75/
+        ```python
+        # 75 上台阶 Solution by Xuzheng Chen
+        def func(n):
+            if n == 1:
+                return 1
+            if n == 2:
+                return 2
+            return func(n-1) + func(n-2)
+        
+        n = int(input())
+        print(func(n))
+        ```
+    </Accordion>
+    <Accordion title="76 作业文件统计">
+    http://jsglcbb.openjudge.cn/cpractice/76/
+        ```python
+        # 76 作业文件统计 Solution by Xuzheng Chen
+        input_list = []
+        while True:
+            try:
+                s = input().split()
+                input_list.append(s)
+            except Exception as e:
+                break
+        py_list = [[x] for line in input_list for x in line if x[-3:] == ".py"]
+        for i in range(len(py_list)):
+            for line in input_list[::-1]:
+                if py_list[i][-1] in line:
+                    py_list[i].append(line[0])
+        for l in py_list:
+            print("\\".join(l[::-1]))
+        print(len(py_list))
+        ```
+    </Accordion>
+    <Accordion title="77 小猴吃桃">
+    http://jsglcbb.openjudge.cn/cpractice/77/
+        ```python
+        # 77 小猴吃桃 Solution by Xuzheng Chen
+        def func(n):
+            if n == 1:
+                return 1
+            return 2 * (func(n-1) + 1)
+        n = int(input())
+        for i in range(n):
+            m = int(input())
+            print(func(m))
+        ```
+    </Accordion>
+    <Accordion title="78 有效的数独">
+    http://jsglcbb.openjudge.cn/cpractice/78/
+        ```python
+        # 78 有效的数独 Solution by Xuzheng Chen
+        def check(lst):
+            base = [(3, 3), (3, 4), (3, 5), (4, 3), (4, 4), (4, 5), (5, 3), (5, 4), (5, 5)]
+            direction = [(-3, -3), (-3, 0), (-3, 3), (0, -3), (0, 0), (0, 3), (3, -3), (3, 0), (3, 3)]
+            valid = {i+1 for i in range(9)}
+            for i in range(9):
+                if set(lst[i]) != valid:
+                    return "False"
+                if set([l[i] for l in lst]) != valid:
+                    return "False"
+            for d in direction:
+                if set([lst[i+d[0]][j+d[1]] for (i, j) in base]) != valid:
+                    return "False"
+        
+            return "True"
+        
+        n = int(input())
+        for i in range(n):
+            lst = [[int(x) for x in input().split()] for i in range(9)]
+            print(f"#{i+1} {check(lst)}")
+            
+            s = input()
+        ```
+    </Accordion>
+    <Accordion title="79 逃出迷宫">
+    http://jsglcbb.openjudge.cn/cpractice/79/
+        ```python
+        # 79 逃出迷宫 Solution by Xuzheng Chen
+        N = int(input())
+        a = [[int(x) for x in input().split()] for i in range(N)]
+        mark = [0 for i in range(N*N)]
+        for i in range(N):
+            for j in range(N):
+                if a[i][j] == 1:
+                    mark[N*i+j] == 1
+        
+        idx = 0
+        tmp_list = [(0, 0)]
+        flag = True
+        while idx <= 2*N and flag:
+            for (i, j) in tmp_list:
+                if i == N-1 and j == N-1:
+                    flag = False
+                    break
+                elif i == N-1:
+                    if a[i][j+1] == 0: tmp_list.append((i, j+1))
+                elif j == N-1:
+                    if a[i+1][j] == 0: tmp_list.append((i+1, j))
+                else:
+                    if a[i][j+1] == 0: tmp_list.append((i, j+1))
+                    if a[i+1][j] == 0: tmp_list.append((i+1, j))
+                idx += 1
+        if (N-1, N-1) in tmp_list:
+            print("Yes")
+        else:
+            print("No")
+        ```
+    </Accordion>
+    <Accordion title="80 公约数和公倍数（递归）">
+    http://jsglcbb.openjudge.cn/cpractice/80/
+        ```python
+        # 80 公约数和公倍数（递归） Solution by Xuzheng Chen
+        def gcd(a, b):
+            if b == 0:
+                return a
+            else:
+                return gcd(b, a % b)
+        
+        def lcm(a, b):
+            return (a * b) // gcd(a, b)
+        
+        n = int(input())
+        for _ in range(n):
+            a, b = map(int, input().split())
+            print(gcd(a, b), lcm(a, b))
+        ```
+    </Accordion>
+    <Accordion title="81 识别DNA重复序列">
+    http://jsglcbb.openjudge.cn/cpractice/81/
+        ```python
+        # 81 识别DNA重复序列 Solution by Xuzheng Chen
+        s = input()
+        if len(s) <= 5:
+            print("NULL")
+        else:
+            sub_list = [s[j:j+i] for i in range(5, len(s)+1) for j in range(0, len(s)-i+1)]
+        
+            sub_dict = {}
+            for sub in sub_list:
+                if sub in sub_dict:
+                    sub_dict[sub] += 1
+                else:
+                    sub_dict[sub] = 1
+            new_sub_list = sorted(sub_dict.items(), key=lambda x: (-x[1], -len(x[0]), x[0]))
+            # print(new_sub_list)
+            flag = sum([1 for sub in new_sub_list if sub[1] >= 2])
+            if flag == 0:
+                print("NULL")
+            else:
+                for sub in new_sub_list[:min(len(new_sub_list), 5)]:
+                    if sub[1] >= 2:
+                        print(f"{sub[0]}:{sub[1]}")
+        ```
+    </Accordion>
+    <Accordion title="82 成绩排名">
+    http://jsglcbb.openjudge.cn/cpractice/82/
+        ```python
+        # 82 成绩排名 Solution by Xuzheng Chen
+        m, n = [int(x) for x in input().split()]
+        weight = {}
+        score = {}
+        for i in range(m):
+            course, w = input().split()
+            weight[course] = float(w)
+        for i in range(n):
+            name, course, grade = input().split()
+            if name not in score:
+                score[name] = float(grade) * weight[course]
+            else:
+                score[name] += float(grade) * weight[course]
+        result = sorted(score.items(), key=lambda x: (-x[1], x[0]))
+        for i in range(len(result)):
+            print(result[i][0])
+        ```
+    </Accordion>
+    <Accordion title="83 百家姓">
+    http://jsglcbb.openjudge.cn/cpractice/83/
+        ```python
+        # 83 百家姓 Solution by Xuzheng Chen
+        n, m = map(int, input().split())
+        xing_dict = {}
+        fuxing = []
+        name_list = [input() for i in range(n)]
+        for i in range(m):
+            xing = input()
+            fuxing.append(xing)
+        
+        for name in name_list:
+            if len(name) > 2 and name[:2] in fuxing:
+                if name[:2] not in xing_dict:
+                    xing_dict[name[:2]] = 1
+                else:
+                    xing_dict[name[:2]] += 1
+            else:
+                if name[:1] not in xing_dict:
+                    xing_dict[name[:1]] = 1
+                else:
+                    xing_dict[name[:1]] += 1
+        
+        xing_dict = sorted(xing_dict.items(), key=lambda x: (-x[1], x[0]))
+        for key, value in xing_dict:
+            print(key, value)
+        ```
+    </Accordion>
+</AccordionGroup>
