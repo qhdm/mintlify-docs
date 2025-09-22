@@ -1,10 +1,14 @@
-> 省流版：在大语言模型的辅助下，针对百度贴吧等进行数据分析。
+<Info>
+省流版：在大语言模型的辅助下，针对百度贴吧等进行数据分析。
+</Info>
 ## 1 前言
 数据分析是指用适当的统计分析方法对收集来的大量数据进行分析，将它们加以汇总和理解并消化，以求最大化地开发数据的功能，发挥数据的作用。无论是哪个学科，都会有各式各样的数据，也都会存在数据分析相关的工作和应用。随着 Python 的广泛应用，Python 在数据分析中也得到越来越多的使用。Python 的便捷性以及其所提供的数据分析及可视化的包，能够成为你进行数据分析的有力工具。
 
 **在本项大作业中，我们希望你能够结合生成式人工智能和 Python 代码，来完成对于百度贴吧等数据的数据分析任务**。
 
-> 如果你对 Python 以及相关的数据分析基础较为熟悉，可以**跳过 Python 基础部分**，直接查看<span className="text-blue-500">**大作业的要求及注意事项**</span>。
+<Tip>
+如果你对 Python 以及相关的数据分析基础较为熟悉，可以**跳过 Python 基础部分**，直接查看<span className="text-blue-500">**大作业的要求及注意事项**</span>。
+</Tip>
 
 ## 2 Python 基础
 
@@ -203,8 +207,38 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
    可以随便写一些东西，比如想要“考察北京大学贴吧的盛况”，你可以选择一个或者几个自己感兴趣的、有意思的贴吧来进行分析，写出<span className="text-red-500">自己为什么想选这几个贴吧来分析</span>。
 
 2. **必做：数据获取及介绍**  
-   数据获取的代码参考附件中的 `dataHelper.py`。这个函数我已经帮你实现的非常好了，使用方法就是**运行这个 Python 文件，然后输入你想爬取的贴吧名字，如果输入多个贴吧的话，贴吧之间用空格隔开**。比如要爬取“北京大学吧”和“清华大学吧”的数据，在运行 Python 文件后，我们输入
-   ```python
+   数据获取的代码参考附件中的 `dataHelper.py`：
+   ```python dataHelper.py
+   import asyncio
+   from datetime import datetime
+   import aiotieba
+   import pandas as pd
+   from tqdm import tqdm
+   async def main():
+      tb_list = input().split()
+      for tb in tb_list:
+         print(f"--------------------{tb} Begin!--------------------")
+         async with aiotieba.Client() as client:
+               it_tuple = []
+               for pn in tqdm(range(1)):
+                  threads = await client.get_threads(tb, pn=pn+1, rn=100)
+                  it_tuple += [(thread.user.user_name, thread.user.nick_name_new, \
+                                 thread.user.level, thread.user.glevel, thread.user.gender, \
+                                 thread.user.is_vip, thread.title, thread.text, \
+                                 thread.view_num, thread.reply_num, thread.share_num, \
+                                 thread.agree, thread.disagree,
+                                 datetime.fromtimestamp(thread.create_time).strftime('%Y-%m-%d %H:%M:%S'), \
+                                       datetime.fromtimestamp(thread.last_time).strftime('%Y-%m-%d %H:%M:%S')) for thread in threads]
+         df = pd.DataFrame(it_tuple, columns=['user_name', 'nick_name', 'level', 'glevel', \
+                                                'gender', 'is_vip', 'title', 'text', 'view', 'reply', \
+                                                   'share', 'agree', 'disagree', 'create_time', 'last_time'])
+         df.to_csv(f"./result/{tb}.csv", lineterminator="\r\n", index=False)
+      print("爬取完成！")
+      
+   asyncio.run(main())
+   ```
+   这个函数我已经帮你实现的非常好了，使用方法就是**运行这个 Python 文件，然后输入你想爬取的贴吧名字，如果输入多个贴吧的话，贴吧之间用空格隔开**。比如要爬取“北京大学吧”和“清华大学吧”的数据，在运行 Python 文件后，我们输入
+   ```sh
    北京大学 清华大学
    ````
    就会自动执行爬取代码：
@@ -236,7 +270,23 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
 
    在这一步你需要选择自己想要爬取的贴吧并进行爬取，然后选择你想使用的字段，比如你的分析中可能并不需要“有多少人分享过这篇贴子”和“是否是贴吧会员”这两个字段，你就可以把它们去掉，只选择你接下来分析的时候需要使用的字段。
 
-   为了对数据进行简单的查看并写在报告中，你可以参考我提供的 `checkData.py` 文件，将其中的文件地址替换为你爬取到的数据所存放地址，就可以打印出来第一条数据的相关信息、所选用字段、数据的数目，比如我这里的结果就是:
+   为了对数据进行简单的查看并写在报告中，你可以参考我提供的 `checkData.py` 文件：
+   ```python checkData.py
+   import pandas as pd
+
+   df = pd.read_csv('./result/清华大学.csv')  # 在这里需要替换成你自己csv的path
+
+   print('-'*60)
+   print("数据的第一个为：")
+   print(df.iloc[0])
+   print('-'*60)
+   print("数据的字段为：")
+   print(df.columns)
+   print('-'*60)
+   print("获取数据的数目为：")
+   print(len(df))
+   ```
+   将其中的文件地址替换为你爬取到的数据所存放地址，就可以打印出来第一条数据的相关信息、所选用字段、数据的数目，比如我这里的结果就是:
    ![作业要求](./作业要求img/checkdataresult.png)
    在这一步中，希望你能够简单<span className="text-red-500">描述一下你所收集到的数据</span>。如果你希望收集到更多的数据，可以更改 `dataHelper.py` 文件中 `for` 循环的次数；你也可以通过修改 `it_tuple` 和 `df` 两个变量来添加其他字段。
 3. **必做：数据分析**  
@@ -250,13 +300,47 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
       其回复为
       ![作业要求](./作业要求img/dataresult.png)
 
-      但是在我们的实际数据中，`is_vip`的取值为 `False` 或 `True`，所以需要对AI给出的代码进行修改。修改后的参考代码放在了 `getVipData.py` 中，运行可以得到一个新的csv文件：`北京大学_有会员数据.csv` ，其中存放了108条数据，共有57个不同的发贴人拥有贴吧会员。
+      但是在我们的实际数据中，`is_vip`的取值为 `False` 或 `True`，所以需要对AI给出的代码进行修改。修改后的参考代码放在了 `getVipData.py` 中：
+      ```python getVipData.py
+      import pandas as pd
+
+      # 加载数据
+      file_path = './result/北京大学.csv'
+      data = pd.read_csv(file_path)
+
+      # 筛选出有贴吧会员的用户数据
+      vip_data = data[data['is_vip'] == True]
+
+      # 保存有会员的用户数据到新的CSV文件
+      output_path = './result/北京大学_有会员数据.csv'
+      vip_data.to_csv(output_path, index=False)
+
+      # 统计有多少不同的用户是会员
+      vip_user_count = vip_data['user_name'].nunique()
+      print(f"有 {vip_user_count} 个不同的发贴人拥有贴吧会员。")
+
+      ```
+      运行可以得到一个新的csv文件：`北京大学_有会员数据.csv` ，其中存放了108条数据，共有57个不同的发贴人拥有贴吧会员。
 
       或者是要检查数据中是否有缺失值，可以向大模型提问：
       ```text
       我想检查数据中是否有缺失值，请你帮我写python代码，统计每个字段有多少缺失值。
       ```
-      生成的代码放在了 `checkNaN.py` 文件中，我们运行其给出的代码，就能够得到每个字段中有多少缺失值：
+      生成的代码放在了 `checkNaN.py` 文件中：
+      ```python checkNaN.py
+      import pandas as pd
+
+      # Load your dataset
+      file_path = './result/北京大学.csv'  # Replace with your file path
+      data = pd.read_csv(file_path)
+
+      # Check for missing values in each column
+      missing_values = data.isnull().sum()
+
+      # Print the result
+      print(missing_values)
+      ```
+      我们运行其给出的代码，就能够得到每个字段中有多少缺失值：
       ![作业要求](./作业要求img/checknanresult.png)
    **分析示例2:对数据进行统计**  
       我们可以对数据进行某些统计性的描述，比如画柱状图，统计每个贴吧等级的人有多少个。我们在这里以统计性别比例为例画柱状图，你可以向大模型提问：
@@ -269,7 +353,33 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
       ```text
       0为未知，1为男性，2为女性，三个的颜色分别换为红色、蓝色、绿色。
       ```
-      运行新的代码，得到的结果如图所示：
+      运行新的代码`gender.py`：
+      ```python gender.py
+      import pandas as pd
+      import matplotlib.pyplot as plt
+
+      # 加载数据
+      file_path = './result/北京大学.csv'
+      data = pd.read_csv(file_path)
+
+      # 统计性别分布
+      gender_mapping = {0: 'Unknown', 1: 'Male', 2: 'Female'}
+      data['gender_mapped'] = data['gender'].map(gender_mapping)
+      gender_counts = data['gender_mapped'].value_counts()
+
+      # 绘制饼状图，并为不同性别分配对应的颜色
+      colors = ['grey', 'blue', 'red']  # 对应'Unknown', 'Male', 'Female'
+
+      plt.figure(figsize=(6, 6))
+      print(gender_counts.index)
+      plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=90, colors=colors)
+      plt.title('Gender Distribution of Users')
+      plt.axis('equal')   # 保持饼状图为圆形
+      plt.show()
+
+      plt.savefig("./img/gender1.png")
+      ```
+      得到的结果如图所示：
       ![作业要求](./作业要求img/gender1.png)
       相应的代码都已经放在 `gender.py` 中。
       得到这些统计结果后你就可以做一些分析，比如该贴吧中男性更多，女性更少，在某些特定贴吧中或许能够说明原因，比如体育相关贴吧中男性会更多，美妆相关贴吧中女性会更多等。  
@@ -278,7 +388,41 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
       ```text
       create_time存放的是贴子的发布时间，格式如2023-11-13 22:15:51。请你按照小时进行划分，统计发贴量并绘制折线图。
       ```
-      大模型生成的代码放在了 `timeplot.py` 文件中，运行代码得到的结果为
+      大模型生成的代码放在了 `timeplot.py` 文件中：
+      ```python timeplot.py
+      import pandas as pd
+      import matplotlib.pyplot as plt
+
+      # 加载数据
+      file_path = './result/北京大学.csv'
+      data = pd.read_csv(file_path)
+
+      # 将 create_time 转换为 datetime 类型
+      data['create_time'] = pd.to_datetime(data['create_time'])
+
+      # 提取小时信息
+      data['hour'] = data['create_time'].dt.hour
+
+      # 按小时统计发贴量
+      hourly_post_counts = data['hour'].value_counts().sort_index()
+
+      # 绘制发贴量折线图
+      plt.figure(figsize=(10, 6))
+      plt.plot(hourly_post_counts.index, hourly_post_counts.values, marker='o', linestyle='-', color='b')
+
+      # 添加图表标题和标签
+      plt.title('Number of Posts by Hour', fontsize=14)
+      plt.xlabel('Hour of the Day', fontsize=12)
+      plt.ylabel('Number of Posts', fontsize=12)
+
+      # 显示网格
+      plt.grid(True)
+
+      # 展示图表
+      plt.xticks(range(0, 24))  # 确保X轴显示每个小时
+      plt.savefig("./img/time.png")
+   ```
+      运行代码得到的结果为
       ![作业要求](./作业要求img/time.png)
       结合数据分析得到的折线图，就可以分析这个折线图，比如人们一般在上午和下午比较活跃，中午12点的时候会少一些，可能人们都在吃饭之类的，可以得出一些比较合理的分析结果。
 4. **选做：探索性任务**  
@@ -287,7 +431,44 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
       ```text
       'text'中存放的是贴子正文的内容，我想要对所有的贴子正文内容做词频分析，并去掉常见的词，请你帮我写Python代码。
       ```
-      生成代码放在了 `fanalysis.py` 中，在去掉了一些常见词后，词频分析的前10名为
+      生成代码放在了 `fanalysis.py` 中：
+      ```python fanalysis.py
+      import pandas as pd
+      from collections import Counter
+      import jieba  # 用于中文分词
+      from wordcloud import STOPWORDS  # 停用词库
+
+      # 加载数据
+      file_path = './result/北京大学.csv'
+      data = pd.read_csv(file_path)
+
+      # 合并所有贴子正文
+      all_text = ' '.join(data['text'].astype(str))
+
+      # 中文分词
+      words = jieba.lcut(all_text)
+
+      # 加载或定义停用词列表（可以扩展此列表）
+      stopwords = set(STOPWORDS)  # 英文停用词
+      stop_list = ['的', '了', '和', '是', '在', '也', '就', '不', '有', '人', '都', '我们', '你', '我', '他', '她', '它', \
+                  '可以', '一个', '没有', '自己', '什么', '这个', '一下', '就是', '有没有', '知道', '因为', '所以', '不是', \
+                     '如果', '大家', '需要', '现在', '怎么', '请问']
+      stopwords.update(stop_list)  # 常见中文停用词
+
+      # 去除停用词
+      filtered_words = [word for word in words if word not in stopwords and len(word) > 1]
+
+      # 统计词频
+      word_counts = Counter(filtered_words)
+
+      # 显示出现频率最高的前20个词
+      most_common_words = word_counts.most_common(10)
+      print("Top 10 words by frequency:")
+      for word, freq in most_common_words:
+         print(f"{word}: {freq}")
+
+      ```
+      在去掉了一些常见词后，词频分析的前10名为
       ```text
       北大: 3416
       专业: 1415
@@ -306,7 +487,53 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
       ```text
       用贴子正文内容绘制词云图。
       ```
-      生成代码放在了 `cloud.py` 中，运行代码的结果如图所示：
+      生成代码放在了 `cloud.py` 中：
+      ```python cloud.py
+      import pandas as pd
+      import jieba
+      from wordcloud import WordCloud, STOPWORDS
+      import matplotlib.pyplot as plt
+
+      # 加载数据
+      file_path = './result/北京大学.csv'
+      data = pd.read_csv(file_path)
+
+      # 合并所有帖子正文内容
+      all_text = ' '.join(data['text'].astype(str))
+
+      # 中文分词
+      words = jieba.lcut(all_text)
+
+      # 定义停用词列表，可以添加更多常见中文停用词
+      stopwords = set(STOPWORDS)
+      stop_list = ['的', '了', '和', '是', '在', '也', '就', '不', '有', '人', '都', '我们', '你', '我', '他', '她', '它', \
+                  '可以', '一个', '没有', '自己', '什么', '这个', '一下', '就是', '有没有', '知道', '因为', '所以', '不是', \
+                     '如果', '大家', '需要', '现在', '怎么', '请问']
+      stopwords.update(stop_list)
+
+      # 过滤掉停用词
+      filtered_words = [word for word in words if word not in stopwords and len(word) > 1]
+
+      # 重新拼接词语，供词云使用
+      filtered_text = ' '.join(filtered_words)
+
+      # 生成词云
+      wordcloud = WordCloud(
+         font_path='use.ttc',  # 设置中文字体（系统内的中文字体文件路径）
+         width=800,
+         height=600,
+         background_color='white',
+         stopwords=stopwords,
+         max_words=200
+      ).generate(filtered_text)
+
+      # 显示词云图
+      plt.figure(figsize=(10, 8))
+      plt.imshow(wordcloud, interpolation='bilinear')
+      plt.axis('off')  # 不显示坐标轴
+      plt.savefig("./img/wordcloud.png")
+      ```
+      运行代码的结果如图所示：
       ![作业要求](./作业要求img/wordcloud.png)
       你可以结合词云图进行进一步的分析，比如你可以分别绘制某一时间节点前后的词云图，就可以对比不同时间段贴吧热门话题是如何改变的。相比于直接看词频分析结果，词云图更加清晰和直观。  
    **探索性任务示例3:情感分析**  
@@ -314,7 +541,34 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
       ```text
       请你"北京大学.csv"和"清华大学.csv"中'text'字段的贴子内容分别进行情感分析，随机选择一条，打印text内容，并输出情感分数。
       ```
-      生成代码放在了 `compare.py` 中，运行结果如图所示：
+      生成代码放在了 `compare.py` 中：
+      ```python compare.py
+      import pandas as pd
+      import random
+      from snownlp import SnowNLP
+
+      # 加载数据
+      beijing_data = pd.read_csv('./result/北京大学.csv')
+      tsinghua_data = pd.read_csv('./result/清华大学.csv')
+
+      # 从每个数据集中随机选择一条帖子
+      beijing_sample_text = random.choice(beijing_data['text'].dropna().astype(str).tolist())
+      tsinghua_sample_text = random.choice(tsinghua_data['text'].dropna().astype(str).tolist())
+
+      # 计算情感分数
+      beijing_sentiment_score = SnowNLP(beijing_sample_text).sentiments
+      tsinghua_sentiment_score = SnowNLP(tsinghua_sample_text).sentiments
+
+      # 打印结果
+      print("北京大学贴吧随机一条帖子内容：")
+      print(beijing_sample_text)
+      print(f"情感分数：{beijing_sentiment_score}\n")
+
+      print("清华大学贴吧随机一条帖子内容：")
+      print(tsinghua_sample_text)
+      print(f"情感分数：{tsinghua_sentiment_score}")
+      ```
+      运行结果如图所示：
       ![作业要求](./作业要求img/senresult.png)
    **探索性任务示例4:文本生成**  
       对于贴吧来说，不同贴吧有不同的发言风格。大语言模型拥有非常强大的文本理解和生成能力，你可以使用大语言模型来学习到这种发言风格，并生成类似风格的文本，如向大语言模型提问：
@@ -364,6 +618,6 @@ title=来玩一玩近期流行的宾果游戏 nickname=白雨衣. gender=2 text=
 ---
 <div className="text-center text-xs text-gray-400 mt-10">
   贡献者：陈旭峥  
-  上次修改：2025/09/18
+  上次修改：2025/09/23
 </div>
 ---
