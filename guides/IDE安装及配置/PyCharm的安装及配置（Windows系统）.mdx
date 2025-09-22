@@ -1,6 +1,5 @@
-#### Windows
-
-1. **安装 Miniconda**
+<Steps>
+  <Step title="安装 Miniconda">
    - 打开 [Miniconda 官网](https://docs.conda.io/en/latest/miniconda.html)，下载 Windows 64-bit 安装包。
    - **安装时一定要注意：**
      - 勾选 *Add Miniconda3 to PATH environment variable*（如果有提示）。
@@ -10,8 +9,8 @@
      conda --version
      ```
      如果能看到版本号，说明安装成功。
-
-2. **检查系统路径 (PATH)**
+  </Step>
+  <Step title="检查系统路径 (PATH)">
    - 如果 CMD 里输入 `conda` 提示“不是内部或外部命令”，说明 PATH 没有配置好。
    - 解决方法：
      1. 打开 **开始菜单** → 搜索 **环境变量** → 点击 **编辑系统环境变量**。
@@ -26,19 +25,24 @@
         ```bash
         conda --version
         ```
-
-
-3. **安装 PyCharm**
+  </Step>
+  <Step title="安装 PyCharm">
    - 前往 [PyCharm 官网](https://www.jetbrains.com/pycharm/download/) 下载 Windows 版本。
    - 安装完成后，打开 PyCharm 并新建项目。
+  </Step>
+  <Step title="配置运行">
 
-
-4. **配置运行**
    - 新建文件 `hello.py`，输入：
      ```python
      print("Hello, Python!")
      ```
    - 点击右上角的绿色三角形按钮进行运行，若输出结果正确，则说明配置成功。
+  </Step>
+</Steps>
 
-
- 
+ ---
+<div className="text-center text-xs text-gray-400 mt-10">
+  贡献者：尹思源、陈旭峥  
+  上次修改：2025/09/22
+</div>
+---

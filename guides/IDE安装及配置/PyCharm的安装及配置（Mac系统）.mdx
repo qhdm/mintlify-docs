@@ -2,21 +2,21 @@
    <Step title="使用命令行安装 Miniconda">
    - 打开终端：使用`command`+`空格`打开聚焦搜索，输入`terminal`，回车打开终端。
    - 在终端中输入以下命令：
-   ```bash
-    mkdir -p ~/miniconda3
-    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
-    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-    rm -rf ~/miniconda3/miniconda.sh
-    ```
+      ```bash
+      mkdir -p ~/miniconda3
+      curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
+      bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+      rm -rf ~/miniconda3/miniconda.sh
+      ```
     - 安装完成后，输入以下命令对 bash 和 zsh shell 进行初始化：
-    ```bash
-    ~/miniconda3/bin/conda init bash
-    ~/miniconda3/bin/conda init zsh
-    ```
+      ```bash
+      ~/miniconda3/bin/conda init bash
+      ~/miniconda3/bin/conda init zsh
+      ```
     - 最后在终端输入以下命令，若显示版本号则表示安装成功：
-    ```bash
-    conda -V
-    ```
+      ```bash
+      conda -V
+      ```
    </Step>
    <Step title="安装 PyCharm">
    - 前往 [PyCharm 官网](https://www.jetbrains.com/pycharm/download/) 下载，请注意自己的芯片类型。
@@ -31,3 +31,10 @@
    - 点击右上角的绿色三角形按钮进行运行，若输出结果正确，则说明配置成功。
    </Step>
 </Steps>
+
+---
+<div className="text-center text-xs text-gray-400 mt-10">
+  贡献者：尹思源、陈旭峥  
+  上次修改：2025/09/22
+</div>
+---
