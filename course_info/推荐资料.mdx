@@ -11,25 +11,174 @@
 ## 代码练习
 如果你想多做一些代码相关题目，可以考虑其他老师在OpenJudge上的小组：
 
-| 老师 | 小组名称 | 小组链接 | 本学期是否开课（25秋） |
-| --- | --- | --- | --- |
-| 唐大仕 | 计算概论C | http://pkuitc.openjudge.cn | ✔️ |
-| 苏祺 | 计算概论C-苏老师班 | http://21jgc13.openjudge.cn/ | ✔️ |
-| 陈斌 | - | - | ✔️ |
-| **钱丽艳(本班)** | 计算概论C(py) | http://jgcq.openjudge.cn/ | ✔️ |
-| 吴云芳 | 计概WYF | http://wyf.openjudge.cn | ✔️ |
-| 张成 | 计算概论C（张老师班） | http://jgczhang.openjudge.cn | ✔️ |
-| 吴建军 | 计算概论C_WuJJ | http://wujj.openjudge.cn | ✔️ |
-| 马郓 | 2025秋-计算概论C-7班 | http://wjpython.openjudge.cn/ | ✔️ |
-| 常宝宝 | 计算概论C-CHBB | http://jsglcbb.openjudge.cn | ✔️ |
-| 郭炜 | 文科计算机基础实验班 | http://wjjc.openjudge.cn | ✔️ |
-| 穗志方 | 计算概论CSZF | http://jgcszf.openjudge.cn/ | ✔️ |
-| 杨春 | 计算概论C_YC | http://21jsgl15.openjudge.cn/ | ✔️ |
-| 邓习峰 | 计算C@邓习峰 | http://dxfjgc.openjudge.cn/ | ✔️ |
-| 刘扬 | 计概C刘扬组 | http://jgclyz.openjudge.cn/ | ✖️ |
-| 刘志敏 | 计算概论C_LZM | http://jgc2020_1.openjudge.cn | ✖️ |
-| 冯梅萍 | 2025计算概论C-1 | http://csc6.openjudge.cn | ✖️ |
-| 陆俊林 | 2024计算概论C-6班 | http://justcoding.openjudge.cn | ✖️ |
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+<table style={{ width: 'auto', borderCollapse: 'collapse', textAlign: 'center' }}>
+  <thead>
+    <tr>
+      <th style={{ padding: 8, borderBottom: '2px solid #ccc' }}>老师</th>
+      <th style={{ padding: 8, borderBottom: '2px solid #ccc' }}>小组名称</th>
+      <th style={{ padding: 8, borderBottom: '2px solid #ccc' }}>小组链接</th>
+      <th style={{ padding: 8, borderBottom: '2px solid #ccc' }}>本学期是否开课（25秋）</th>
+    </tr>
+  </thead>
+  <tbody>
+    {/* 高亮行 */}
+    <tr style={{ backgroundColor: '#fffbe6', borderLeft: '4px solid #faad14' }}>
+      <td style={{ padding: 8, color: '#d46b08', fontWeight: 'bold' }}>✨钱丽艳(本班)</td>
+      <td style={{ padding: 8 }}>计算概论C(py)</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://jgcq.openjudge.cn/">http://jgcq.openjudge.cn/</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    {/* 普通行 */}
+    <tr>
+      <td style={{ padding: 8 }}>唐大仕</td>
+      <td style={{ padding: 8 }}>计算概论C</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://pkuitc.openjudge.cn">http://pkuitc.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>苏祺</td>
+      <td style={{ padding: 8 }}>计算概论C-苏老师班</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://21jgc13.openjudge.cn/">http://21jgc13.openjudge.cn/</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    {/* 其余老师继续照抄即可 */}
+    <tr>
+      <td style={{ padding: 8 }}>陈斌</td>
+      <td style={{ padding: 8 }}>-</td>
+      <td style={{ padding: 8 }}>-</td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>吴云芳</td>
+      <td style={{ padding: 8 }}>计概WYF</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://wyf.openjudge.cn">http://wyf.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>张成</td>
+      <td style={{ padding: 8 }}>计算概论C（张老师班）</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://jgczhang.openjudge.cn">http://jgczhang.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>吴建军</td>
+      <td style={{ padding: 8 }}>计算概论C_WuJJ</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://wujj.openjudge.cn">http://wujj.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>马郓</td>
+      <td style={{ padding: 8 }}>2025秋-计算概论C-7班</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://wjpython.openjudge.cn/">http://wjpython.openjudge.cn/</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>常宝宝</td>
+      <td style={{ padding: 8 }}>计算概论C-CHBB</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://jsglcbb.openjudge.cn">http://jsglcbb.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>郭炜</td>
+      <td style={{ padding: 8 }}>文科计算机基础实验班</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://wjjc.openjudge.cn">http://wjjc.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>穗志方</td>
+      <td style={{ padding: 8 }}>计算概论CSZF</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://jgcszf.openjudge.cn/">http://jgcszf.openjudge.cn/</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>杨春</td>
+      <td style={{ padding: 8 }}>计算概论C_YC</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://21jsgl15.openjudge.cn/">http://21jsgl15.openjudge.cn/</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>邓习峰</td>
+      <td style={{ padding: 8 }}>计算C@邓习峰</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://dxfjgc.openjudge.cn/">http://dxfjgc.openjudge.cn/</a>
+      </td>
+      <td style={{ padding: 8 }}>✔️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>刘扬</td>
+      <td style={{ padding: 8 }}>计概C刘扬组</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://jgclyz.openjudge.cn/">http://jgclyz.openjudge.cn/</a>
+      </td>
+      <td style={{ padding: 8 }}>✖️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>刘志敏</td>
+      <td style={{ padding: 8 }}>计算概论C_LZM</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://jgc2020_1.openjudge.cn">http://jgc2020_1.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✖️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>冯梅萍</td>
+      <td style={{ padding: 8 }}>2025计算概论C-1</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://csc6.openjudge.cn">http://csc6.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✖️</td>
+    </tr>
+
+    <tr>
+      <td style={{ padding: 8 }}>陆俊林</td>
+      <td style={{ padding: 8 }}>2024计算概论C-6班</td>
+      <td style={{ padding: 8 }}>
+        <a href="http://justcoding.openjudge.cn">http://justcoding.openjudge.cn</a>
+      </td>
+      <td style={{ padding: 8 }}>✖️</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 <Tip>
 可以参考 [OpenJudge使用介绍](/course_info/OpenJudge使用介绍) 加入对应小组，正常做题并提交代码即可。但为了不给该班级老师和助教带来额外的工作量，**建议把自己在小组中的名称加上“仅做题”、“未选课”等字样**。
@@ -38,6 +187,6 @@
 ---
 <div className="text-center text-xs text-gray-400 mt-10">
   贡献者：陈旭峥、尹思源  
-  上次修改：2025/09/22
+  上次修改：2025/09/23
 </div>
 ---
