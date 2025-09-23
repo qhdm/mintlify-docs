@@ -24,22 +24,22 @@
     </Accordion>
     <Accordion title="02 骑车与走路">
     http://jsglcbb.openjudge.cn/cpractice/02/
-    ```python
-    # 02 骑车与走路 Solution by Xuzheng Chen
-    n = int(input())
-    for i in range(n):
-        num = int(input())
-        if num/1.2 < num/3+50:
-            print("Walk")
-        elif num/1.2 == num/3+50:
-            print("All")
-        else:
-            print("Bike")
-    ```
+        ```python 02_骑车与走路.py lines icon="python"
+        # 02 骑车与走路 Solution by Xuzheng Chen
+        n = int(input())
+        for i in range(n):
+            num = int(input())
+            if num/1.2 < num/3+50:
+                print("Walk")
+            elif num/1.2 == num/3+50:
+                print("All")
+            else:
+                print("Bike")
+        ```
     </Accordion>
     <Accordion title="03 校门外的树">
     http://jsglcbb.openjudge.cn/cpractice/03/
-        ```python
+        ```python 03_校门外的树.py lines icon="python"
         # 03 校门外的树 Solution by Xuzheng Chen
         L = input().split()
         l = int(L[0]) + 1
@@ -62,7 +62,7 @@
     </Accordion>
     <Accordion title="04 奥运奖牌计数">
     http://jsglcbb.openjudge.cn/cpractice/04/
-        ```python
+        ```python 04_奥运奖牌计数.py lines icon="python"
         # 04 奥运奖牌计数 Solution by Xuzheng Chen
         n = int(input())
         j = 0
@@ -78,7 +78,7 @@
     </Accordion>
     <Accordion title="05 人民币支付">
     http://jsglcbb.openjudge.cn/cpractice/05/
-        ```python
+        ```python 05_人民币支付.py lines icon="python"
         # 05 人民币支付 Solution by Xuzheng Chen
         n = int(input())
         for i in [100, 50, 20, 10, 5, 1]:
@@ -88,7 +88,7 @@
     </Accordion>
     <Accordion title="06 单词倒排">
     http://jsglcbb.openjudge.cn/cpractice/06/
-        ```python
+        ```python 06_单词倒排.py lines icon="python"
         # 06 单词倒排 Solution by Xuzheng Chen
         s = input().split()
         for ss in s[::-1]:
@@ -97,7 +97,7 @@
     </Accordion>
     <Accordion title="07 统计数字字符个数">
     http://jsglcbb.openjudge.cn/cpractice/07/
-        ```python
+        ```python 07_统计数字字符个数.py lines icon="python"
         # 07 统计数字字符个数 Solution by Xuzheng Chen
         s = input()
         print(len([c for c in s if c in "1234567890"]))
@@ -105,7 +105,7 @@
     </Accordion>
     <Accordion title="08 点和正方形的关系">
     http://jsglcbb.openjudge.cn/cpractice/08/
-        ```python
+        ```python 08_点和正方形的关系.py lines icon="python"
         # 08 点和正方形的关系 Solution by Xuzheng Chen
         x, y = map(int, input().split())
         if -1 <= x <= 1 and -1 <= y <= 1:
@@ -116,7 +116,7 @@
     </Accordion>
     <Accordion title="09 角谷猜想">
     http://jsglcbb.openjudge.cn/cpractice/09/
-        ```python
+        ```python 09_角谷猜想.py lines icon="python"
         # 09 角谷猜想 Solution by Xuzheng Chen
         n = int(input())
         while n != 1:
@@ -132,7 +132,7 @@
     </Accordion>
     <Accordion title="10 找第一个只出现一次的字符">
     http://jsglcbb.openjudge.cn/cpractice/10/
-        ```python
+        ```python 10_找第一个只出现一次的字符.py lines icon="python"
         # 10 找第一个只出现一次的字符 Solution by Xuzheng Chen
         l = input()
         result = ""
@@ -148,7 +148,7 @@
     </Accordion>
     <Accordion title="11 字符菱形">
     http://jsglcbb.openjudge.cn/cpractice/11/
-        ```python
+        ```python 11_字符菱形.py lines icon="python"
         # 11 字符菱形 Solution by Xuzheng Chen
         s = input()
         print("  "+s)
@@ -160,7 +160,7 @@
     </Accordion>
     <Accordion title="12 判断字符串是否为回文">
     http://jsglcbb.openjudge.cn/cpractice/12/
-        ```python
+        ```python 12_判断字符串是否为回文.py lines icon="python"
         # 12 判断字符串是否为回文 Solution by Xuzheng Chen
         s = input()
         if s[::-1] == s:
@@ -171,7 +171,7 @@
     </Accordion>
     <Accordion title="13 奇偶数判断">
     http://jsglcbb.openjudge.cn/cpractice/13/
-        ```python
+        ```python 13_奇偶数判断.py lines icon="python"
         # 13 奇偶数判断 Solution by Xuzheng Chen
         n = int(input())
         if n % 2 == 1:
@@ -182,14 +182,14 @@
     </Accordion>
     <Accordion title="14 反向输出一个三位数">
     http://jsglcbb.openjudge.cn/cpractice/14/
-        ```python
+        ```python 14_反向输出一个三位数.py lines icon="python"
         # 14 反向输出一个三位数 Solution by Xuzheng Chen
         print(input()[::-1])
         ```
     </Accordion>
     <Accordion title="15 求三个数的和">
     http://jsglcbb.openjudge.cn/cpractice/15/
-        ```python
+        ```python 15_求三个数的和.py lines icon="python"
         # 15 求三个数的和 Solution by Xuzheng Chen
         a, b, c = [float(x) for x in input().split()]
         if a + b + c == int(a + b + c):
@@ -200,7 +200,7 @@
     </Accordion>
     <Accordion title="16 判断子串">
     http://jsglcbb.openjudge.cn/cpractice/16/
-        ```python
+        ```python 16_判断子串.py lines icon="python"
         # 16 判断子串 Solution by Xuzheng Chen
         s1 = input()
         s2 = input()
@@ -212,7 +212,7 @@
     </Accordion>
     <Accordion title="17 最近点对">
     http://jsglcbb.openjudge.cn/cpractice/17/
-        ```python
+        ```python 17_最近点对.py lines icon="python"
         # 17 最近点对 Solution by Xuzheng Chen
         T = int(input())
         for t in range(T):
@@ -226,7 +226,7 @@
     </Accordion>
     <Accordion title="18 回文数个数">
     http://jsglcbb.openjudge.cn/cpractice/18/
-        ```python
+        ```python 18_回文数个数.py lines icon="python"
         # 18 回文数个数 Solution by Xuzheng Chen
         n = int(input())
         num_list = [1 for i in range(1, n+1) if str(i)[::-1] == str(i)]
@@ -235,7 +235,7 @@
     </Accordion>
     <Accordion title="19 求n个数的和">
     http://jsglcbb.openjudge.cn/cpractice/19/
-        ```python
+        ```python 19_求n个数的和.py lines icon="python"
         # 19 求n个数的和 Solution by Xuzheng Chen
         n = int(input())
         num_list = [int(input()) for i in range(n)]
@@ -244,7 +244,7 @@
     </Accordion>
     <Accordion title="20 多次求n个数的和">
     http://jsglcbb.openjudge.cn/cpractice/20/
-        ```python
+        ```python 20_多次求n个数的和.py lines icon="python"
         # 20 多次求n个数的和 Solution by Xuzheng Chen
         m = int(input())
         for mm in range(m):
@@ -255,7 +255,7 @@
     </Accordion>
     <Accordion title="21 成绩排序">
     http://jsglcbb.openjudge.cn/cpractice/21/
-        ```python
+        ```python 21_成绩排序.py lines icon="python"
         # 21 成绩排序 Solution by Xuzheng Chen
         n = int(input())
         grade_list = {}
@@ -270,7 +270,7 @@
     </Accordion>
     <Accordion title="22 病人排队">
     http://jsglcbb.openjudge.cn/cpractice/22/
-        ```python
+        ```python 22_病人排队.py lines icon="python"
         # 22 病人排队 Solution by Xuzheng Chen
         n = int(input())
         old = {}
@@ -291,7 +291,7 @@
     </Accordion>
     <Accordion title="23 万年历">
     http://jsglcbb.openjudge.cn/cpractice/23/
-        ```python
+        ```python 23_万年历.py lines icon="python"
         # 23 万年历 Solution by Xuzheng Chen
         def isRun(y):
             if y%4 == 0 and y%100 != 0:
@@ -335,7 +335,7 @@
     </Accordion>
     <Accordion title="24 单词使用频率统计">
     http://jsglcbb.openjudge.cn/cpractice/24/
-        ```python
+        ```python 24_单词使用频率统计.py lines icon="python"
         # 24 单词使用频率统计 Solution by Xuzheng Chen
         lst = []
         while True:
@@ -369,7 +369,7 @@
     </Accordion>
     <Accordion title="25 校园食宿预订系统">
     http://jsglcbb.openjudge.cn/cpractice/25/
-        ```python
+        ```python 25_校园食宿预订系统.py lines icon="python"
         # 25 校园食宿预订系统 Solution by Xuzheng Chen
         n, m = [int(x) for x in input().split()]
         value, quantity, number = {}, {}, {}
@@ -397,7 +397,7 @@
     </Accordion>
     <Accordion title="26 打印任意年份任意月份的日历">
     http://jsglcbb.openjudge.cn/cpractice/26/
-        ```python
+        ```python 26_打印任意年份任意月份的日历.py lines icon="python"
         # 26 打印任意年份任意月份的日历 Solution by Xuzheng Chen
         def isRun(y):
             if y%4 == 0 and y%100 != 0:
@@ -464,7 +464,7 @@
     </Accordion>
     <Accordion title="27 计概成绩">
     http://jsglcbb.openjudge.cn/cpractice/27/
-        ```python
+        ```python 27_计概成绩.py lines icon="python"
         # 27 计概成绩 Solution by Xuzheng Chen
         n, m = [int(x) for x in input().split()]
         def cal_gpa(n):
@@ -485,7 +485,7 @@
     </Accordion>
     <Accordion title="28 简单计算器">
     http://jsglcbb.openjudge.cn/cpractice/28/
-        ```python
+        ```python 28_简单计算器.py lines icon="python"
         # 28 简单计算器 Solution by Xuzheng Chen
         a, b, o = input().split()
         a = int(a)
@@ -507,7 +507,7 @@
     </Accordion>
     <Accordion title="29 快速生成矩阵">
     http://jsglcbb.openjudge.cn/cpractice/29/
-        ```python
+        ```python 29_快速生成矩阵.py lines icon="python"
         # 29 快速生成矩阵 Solution by Xuzheng Chen
         s = input().split()
         m ,n = int(s[0]),int(s[1])
@@ -521,7 +521,7 @@
     </Accordion>
     <Accordion title="30 学生排序">
     http://jsglcbb.openjudge.cn/cpractice/30/
-        ```python
+        ```python 30_学生排序.py lines icon="python"
         # 30 学生排序 Solution by Xuzheng Chen
         students = [('John', 'A', 15), # 姓名，成绩，年龄
         		('Mike', 'B', 12),
@@ -536,7 +536,7 @@
     </Accordion>
     <Accordion title="31 会议室时间安排">
     http://jsglcbb.openjudge.cn/cpractice/31/
-        ```python
+        ```python 31_会议室时间安排.py lines icon="python"
         # 31 会议室时间安排 Solution by Xuzheng Chen
         n = int(input())
         dic = {}
@@ -550,7 +550,7 @@
     </Accordion>
     <Accordion title="32 字符串交换">
     http://jsglcbb.openjudge.cn/cpractice/32/
-        ```python
+        ```python 32_字符串交换.py lines icon="python"
         # 32 字符串交换 Solution by Xuzheng Chen
         a = input()
         b = input()
@@ -560,7 +560,7 @@
     </Accordion>
     <Accordion title="33 跳水比赛计分">
     http://jsglcbb.openjudge.cn/cpractice/33/
-        ```python
+        ```python 33_跳水比赛计分.py lines icon="python"
         # 33 跳水比赛计分 Solution by Xuzheng Chen
         n = int(input())
         dic = {}
@@ -575,7 +575,7 @@
     </Accordion>
     <Accordion title="34 猫吃鱼">
     http://jsglcbb.openjudge.cn/cpractice/34/
-        ```python
+        ```python 34_猫吃鱼.py lines icon="python"
         # 34 猫吃鱼 Solution by Xuzheng Chen
         while True:
             try:
@@ -599,7 +599,7 @@
     </Accordion>
     <Accordion title="35 藏头诗">
     http://jsglcbb.openjudge.cn/cpractice/35/
-        ```python
+        ```python 35_藏头诗.py lines icon="python"
         # 35 藏头诗 Solution by Xuzheng Chen
         while True:
             try:
@@ -664,7 +664,7 @@
     </Accordion>
     <Accordion title="36 多少种取法">
     http://jsglcbb.openjudge.cn/cpractice/36/
-        ```python
+        ```python 36_多少种取法.py lines icon="python"
         # 36 多少种取法 Solution by Xuzheng Chen
         T = int(input())
         def func(m, n, s):
@@ -691,7 +691,7 @@
     </Accordion>
     <Accordion title="37 字符串中的整数求和">
     http://jsglcbb.openjudge.cn/cpractice/37/
-        ```python
+        ```python 37_字符串中的整数求和.py lines icon="python"
         # 37 字符串中的整数求和 Solution by Xuzheng Chen
         a, b = input().split()
         a = int(a[:2])
@@ -701,7 +701,7 @@
     </Accordion>
     <Accordion title="38 寻找中位数">
     http://jsglcbb.openjudge.cn/cpractice/38/
-        ```python
+        ```python 38_寻找中位数.py lines icon="python"
         # 38 寻找中位数 Solution by Xuzheng Chen
         T = int(input())
         for t in range(T):
@@ -718,7 +718,7 @@
     </Accordion>
     <Accordion title="39 找出全部子串位置">
     http://jsglcbb.openjudge.cn/cpractice/39/
-        ```python
+        ```python 39_找出全部子串位置.py lines icon="python"
         # 39 找出全部子串位置 Solution by Xuzheng Chen
         n = int(input())
         for i in range(n):
@@ -735,7 +735,7 @@
     </Accordion>
     <Accordion title="40 最简单的单词">
     http://jsglcbb.openjudge.cn/cpractice/40/
-        ```python
+        ```python 40_最简单的单词.py lines icon="python"
         # 40 最简单的单词 Solution by Xuzheng Chen
         T = int(input())
         for t in range(T):
@@ -757,7 +757,7 @@
     </Accordion>
     <Accordion title="41 统计质数个数">
     http://jsglcbb.openjudge.cn/cpractice/41/
-        ```python
+        ```python 41_统计质数个数.py lines icon="python"
         # 41 统计质数个数 Solution by Xuzheng Chen
         n, m = map(int, input().split())
         from math import sqrt
@@ -773,7 +773,7 @@
     </Accordion>
     <Accordion title="42 高级口令">
     http://jsglcbb.openjudge.cn/cpractice/42/
-        ```python
+        ```python 42_高级口令.py lines icon="python"
         # 42 高级口令 Solution by Xuzheng Chen
         s = input()
         s = s[:s.find("*")+1]
@@ -790,7 +790,7 @@
     </Accordion>
     <Accordion title="43 八戒学算术">
     http://jsglcbb.openjudge.cn/cpractice/43/
-        ```python
+        ```python 43_八戒学算术.py lines icon="python"
         # 43 八戒学算术 Solution by Xuzheng Chen
         n = int(input())
         nums = [int(x) for x in input().split()]
@@ -799,7 +799,7 @@
     </Accordion>
     <Accordion title="44 商品评分">
     http://jsglcbb.openjudge.cn/cpractice/44/
-        ```python
+        ```python 44_商品评分.py lines icon="python"
         # 44 商品评分 Solution by Xuzheng Chen
         n = int(input())
         for t in range(n):
@@ -816,7 +816,7 @@
     </Accordion>
     <Accordion title="45 字符计数">
     http://jsglcbb.openjudge.cn/cpractice/45/
-        ```python
+        ```python 45_字符计数.py lines icon="python"
         # 45 字符计数 Solution by Xuzheng Chen
         n = int(input())
         for t in range(n):
@@ -829,7 +829,7 @@
     </Accordion>
     <Accordion title="46 好数坏数">
     http://jsglcbb.openjudge.cn/cpractice/46/
-        ```python
+        ```python 46_好数坏数.py lines icon="python"
         # 46 好数坏数 Solution by Xuzheng Chen
         n = int(input())
         if n % 35 == 0:
@@ -842,14 +842,14 @@
     </Accordion>
     <Accordion title="47 买手办">
     http://jsglcbb.openjudge.cn/cpractice/47/
-        ```python
+        ```python 47_买手办.py lines icon="python"
         # 47 买手办 Solution by Xuzheng Chen
         print(sum([int(x) for x in input().split() if int(x)<=60]))
         ```
     </Accordion>
     <Accordion title="48 纸币兑换硬币">
     http://jsglcbb.openjudge.cn/cpractice/48/
-        ```python
+        ```python 48_纸币兑换硬币.py lines icon="python"
         # 48 纸币兑换硬币 Solution by Xuzheng Chen
         x, y, z = [int(x) for x in input().split()]
         ycount = (10*x) // y + 1
@@ -864,7 +864,7 @@
     </Accordion>
     <Accordion title="49 物资统计">
     http://jsglcbb.openjudge.cn/cpractice/49/
-        ```python
+        ```python 49_物资统计.py lines icon="python"
         # 49 物资统计 Solution by Xuzheng Chen
         n = int(input())
         dic = {}
@@ -881,7 +881,7 @@
     </Accordion>
     <Accordion title="50 医院负荷">
     http://jsglcbb.openjudge.cn/cpractice/50/
-        ```python
+        ```python 50_医院负荷.py lines icon="python"
         # 50 医院负荷 Solution by Xuzheng Chen
         N = int(input())
         def get_max(dic):
@@ -909,7 +909,7 @@
     </Accordion>
     <Accordion title="51 矩阵换行求边缘和">
     http://jsglcbb.openjudge.cn/cpractice/51/
-        ```python
+        ```python 51_矩阵换行求边缘和.py lines icon="python"
         # 51 矩阵换行求边缘和 Solution by Xuzheng Chen
         m, n = [int(x) for x in input().split()]
         matrix = [[int(x) for x in input().split()] for i in range(m)]
@@ -928,7 +928,7 @@
     </Accordion>
     <Accordion title="52 很简单的整数划分问题">
     http://jsglcbb.openjudge.cn/cpractice/52/
-        ```python
+        ```python 52_很简单的整数划分问题.py lines icon="python"
         # 52 很简单的整数划分问题 Solution by Xuzheng Chen
         def func(n, m):
             if m == 1:
@@ -945,7 +945,7 @@
     </Accordion>
     <Accordion title="53 身份证校验">
     http://jsglcbb.openjudge.cn/cpractice/53/
-        ```python
+        ```python 53_身份证校验.py lines icon="python"
         # 53 身份证校验 Solution by Xuzheng Chen
         n = int(input())
         for i in range(n):
@@ -966,7 +966,7 @@
     </Accordion>
     <Accordion title="54 凯撒密码">
     http://jsglcbb.openjudge.cn/cpractice/54/
-        ```python
+        ```python 54_凯撒密码.py lines icon="python"
         # 54 凯撒密码 Solution by Xuzheng Chen
         mode = input()
         key = int(input())
@@ -997,7 +997,7 @@
     </Accordion>
     <Accordion title="55 数列求和">
     http://jsglcbb.openjudge.cn/cpractice/55/
-        ```python
+        ```python 55_数列求和.py lines icon="python"
         # 55 数列求和 Solution by Xuzheng Chen
         n = int(input())
         print("{:.6f}".format(sum([float(1/i) for i in range(1,n+1) if i%2 == n%2])))
@@ -1005,7 +1005,7 @@
     </Accordion>
     <Accordion title="56 删除子串">
     http://jsglcbb.openjudge.cn/cpractice/56/
-        ```python
+        ```python 56_删除子串.py lines icon="python"
         # 56 删除子串 Solution by Xuzheng Chen
         s1, s2, n = input().split()
         if s1.find(s2) == -1:
@@ -1023,7 +1023,7 @@
     </Accordion>
     <Accordion title="57 身份证有效性验证">
     http://jsglcbb.openjudge.cn/cpractice/57/
-        ```python
+        ```python 57_身份证有效性验证.py lines icon="python"
         # 57 身份证有效性验证 Solution by Xuzheng Chen
         ID = input()
         if len(ID) != 18:
@@ -1049,7 +1049,7 @@
     </Accordion>
     <Accordion title="58 统计成绩">
     http://jsglcbb.openjudge.cn/cpractice/58/
-        ```python
+        ```python 58_统计成绩.py lines icon="python"
         # 58 统计成绩 Solution by Xuzheng Chen
         n = int(input())
         for i in range(n):
@@ -1059,7 +1059,7 @@
     </Accordion>
     <Accordion title="59 列表练习">
     http://jsglcbb.openjudge.cn/cpractice/59/
-        ```python
+        ```python 59_列表练习.py lines icon="python"
         # 59 列表练习 Solution by Xuzheng Chen
         L = [int(x) for x in input().split()]
         x, y = [int(x) for x in input().split()]
@@ -1081,7 +1081,7 @@
     </Accordion>
     <Accordion title="60 字典练习">
     http://jsglcbb.openjudge.cn/cpractice/60/
-        ```python
+        ```python 60_字典练习.py lines icon="python"
         # 60 字典练习 Solution by Xuzheng Chen
         pairs = input().split(",")
         D = {p.split()[0]: int(p.split()[1]) for p in pairs}
@@ -1101,7 +1101,7 @@
     </Accordion>
     <Accordion title="61 找出所有整数">
     http://jsglcbb.openjudge.cn/cpractice/61/
-        ```python
+        ```python 61_找出所有整数.py lines icon="python"
         # 61 找出所有整数 Solution by Xuzheng Chen
         import re
         m = "\d+"
@@ -1117,7 +1117,7 @@
     </Accordion>
     <Accordion title="62 找出所有整数和小数">
     http://jsglcbb.openjudge.cn/cpractice/62/
-        ```python
+        ```python 62_找出所有整数和小数.py lines icon="python"
         # 62 找出所有整数和小数 Solution by Xuzheng Chen
         import re
         m = "\d+\.\d+|\d+"
@@ -1133,7 +1133,7 @@
     </Accordion>
     <Accordion title="63 找出小于100的整数">
     http://jsglcbb.openjudge.cn/cpractice/63/
-        ```python
+        ```python 63_找出小于100的整数.py lines icon="python"
         # 63 找出小于100的整数 Solution by Xuzheng Chen
         import re
         m = r"(^|[^0-9-])(\d{1,2})([^0-9]|$)"
@@ -1146,7 +1146,7 @@
     </Accordion>
     <Accordion title="64 密码判断">
     http://jsglcbb.openjudge.cn/cpractice/64/
-        ```python
+        ```python 64_密码判断.py lines icon="python"
         # 64 密码判断 Solution by Xuzheng Chen
         import re
         m='[A-Za-z][-A-Za-z0-9_]{7,}\Z'
@@ -1163,7 +1163,7 @@
     </Accordion>
     <Accordion title="65 寻找h3">
     http://jsglcbb.openjudge.cn/cpractice/65/
-        ```python
+        ```python 65_寻找h3.py lines icon="python"
         # 65 寻找h3 Solution by Xuzheng Chen
         import re
         m = \
@@ -1174,7 +1174,7 @@
     </Accordion>
     <Accordion title="66 找<>中的数">
     http://jsglcbb.openjudge.cn/cpractice/66/
-        ```python
+        ```python 66_找<>中的数.py lines icon="python"
         # 66 找<>中的数 Solution by Xuzheng Chen
         import re
         m='<(0|[1-9][0-9]{0,2})>'
@@ -1190,7 +1190,7 @@
     </Accordion>
     <Accordion title="67 电话号码">
     http://jsglcbb.openjudge.cn/cpractice/67/
-        ```python
+        ```python 67_电话号码.py lines icon="python"
         # 67 电话号码 Solution by Xuzheng Chen
         import re
         n=int(input())
@@ -1238,7 +1238,7 @@
     </Accordion>
     <Accordion title="68 检查美元">
     http://jsglcbb.openjudge.cn/cpractice/68/
-        ```python
+        ```python 68_检查美元.py lines icon="python"
         # 68 检查美元 Solution by Xuzheng Chen
         import re
         m = "\$[1-9]\d{0,2}(,\d{3})*\$"
@@ -1257,7 +1257,7 @@
     </Accordion>
     <Accordion title="69 寻找工作报告中的数据">
     http://jsglcbb.openjudge.cn/cpractice/69/
-        ```python
+        ```python 69_寻找工作报告中的数据.py lines icon="python"
         # 69 寻找工作报告中的数据 Solution by Xuzheng Chen
         import re
         m = r"(\d+\.\d+%|\d+%|\d+\.\d+|\d+)"
@@ -1273,7 +1273,7 @@
     </Accordion>
     <Accordion title="70 括号内的信息">
     http://jsglcbb.openjudge.cn/cpractice/70/
-        ```python
+        ```python 70_括号内的信息.py lines icon="python"
         # 70 括号内的信息 Solution by Xuzheng Chen
         import re
         exit = 10   #此句没用
@@ -1296,7 +1296,7 @@
     </Accordion>
     <Accordion title="71 房间转移（基础版）">
     http://jsglcbb.openjudge.cn/cpractice/71/
-        ```python
+        ```python 71_房间转移（基础版）.py lines icon="python"
         # 71 房间转移（基础版） Solution by Xuzheng Chen
         def func(n):
             if n == 1:
@@ -1311,7 +1311,7 @@
     </Accordion>
     <Accordion title="72 递归复习法">
     http://jsglcbb.openjudge.cn/cpractice/72/
-        ```python
+        ```python 72_递归复习法.py lines icon="python"
         # 72 递归复习法 Solution by Xuzheng Chen
         def func(n):
             if n == 1:
@@ -1327,7 +1327,7 @@
     </Accordion>
     <Accordion title="73 求斐波那契数列第k项">
     http://jsglcbb.openjudge.cn/cpractice/73/
-        ```python
+        ```python 73_求斐波那契数列第k项.py lines icon="python"
         # 73 求斐波那契数列第k项 Solution by Xuzheng Chen
         import math
         
@@ -1339,7 +1339,7 @@
     </Accordion>
     <Accordion title="74 汉诺塔问题">
     http://jsglcbb.openjudge.cn/cpractice/74/
-        ```python
+        ```python 74_汉诺塔问题.py lines icon="python"
         # 74 汉诺塔问题 Solution by Xuzheng Chen
         def func(n, a, b, c):
             if n == 1:
@@ -1354,7 +1354,7 @@
     </Accordion>
     <Accordion title="75 上台阶">
     http://jsglcbb.openjudge.cn/cpractice/75/
-        ```python
+        ```python 75_上台阶.py lines icon="python"
         # 75 上台阶 Solution by Xuzheng Chen
         def func(n):
             if n == 1:
@@ -1369,7 +1369,7 @@
     </Accordion>
     <Accordion title="76 作业文件统计">
     http://jsglcbb.openjudge.cn/cpractice/76/
-        ```python
+        ```python 76_作业文件统计.py lines icon="python"
         # 76 作业文件统计 Solution by Xuzheng Chen
         input_list = []
         while True:
@@ -1390,7 +1390,7 @@
     </Accordion>
     <Accordion title="77 小猴吃桃">
     http://jsglcbb.openjudge.cn/cpractice/77/
-        ```python
+        ```python 77_小猴吃桃.py lines icon="python"
         # 77 小猴吃桃 Solution by Xuzheng Chen
         def func(n):
             if n == 1:
@@ -1404,7 +1404,7 @@
     </Accordion>
     <Accordion title="78 有效的数独">
     http://jsglcbb.openjudge.cn/cpractice/78/
-        ```python
+        ```python 78_有效的数独.py lines icon="python"
         # 78 有效的数独 Solution by Xuzheng Chen
         def check(lst):
             base = [(3, 3), (3, 4), (3, 5), (4, 3), (4, 4), (4, 5), (5, 3), (5, 4), (5, 5)]
@@ -1431,7 +1431,7 @@
     </Accordion>
     <Accordion title="79 逃出迷宫">
     http://jsglcbb.openjudge.cn/cpractice/79/
-        ```python
+        ```python 79_逃出迷宫.py lines icon="python"
         # 79 逃出迷宫 Solution by Xuzheng Chen
         N = int(input())
         a = [[int(x) for x in input().split()] for i in range(N)]
@@ -1465,7 +1465,7 @@
     </Accordion>
     <Accordion title="80 公约数和公倍数（递归）">
     http://jsglcbb.openjudge.cn/cpractice/80/
-        ```python
+        ```python 80_公约数和公倍数（递归）.py lines icon="python"
         # 80 公约数和公倍数（递归） Solution by Xuzheng Chen
         def gcd(a, b):
             if b == 0:
@@ -1484,7 +1484,7 @@
     </Accordion>
     <Accordion title="81 识别DNA重复序列">
     http://jsglcbb.openjudge.cn/cpractice/81/
-        ```python
+        ```python 81_识别DNA重复序列.py lines icon="python"
         # 81 识别DNA重复序列 Solution by Xuzheng Chen
         s = input()
         if len(s) <= 5:
@@ -1511,7 +1511,7 @@
     </Accordion>
     <Accordion title="82 成绩排名">
     http://jsglcbb.openjudge.cn/cpractice/82/
-        ```python
+        ```python 82_成绩排名.py lines icon="python"
         # 82 成绩排名 Solution by Xuzheng Chen
         m, n = [int(x) for x in input().split()]
         weight = {}
@@ -1532,7 +1532,7 @@
     </Accordion>
     <Accordion title="83 百家姓">
     http://jsglcbb.openjudge.cn/cpractice/83/
-        ```python
+        ```python 83_百家姓.py lines icon="python"
         # 83 百家姓 Solution by Xuzheng Chen
         n, m = map(int, input().split())
         xing_dict = {}
