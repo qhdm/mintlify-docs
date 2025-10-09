@@ -47,6 +47,15 @@ _待发布_
     _待发布_
     
   </Tab>
+
+  <Tab title="徐志衡">
+    ```python 01：两整数求和 lines icon="python"
+    a = int(input())
+    b = int(input())
+    c = a + b
+    print(c)
+    ```
+  </Tab>
 </Tabs>
 
 
@@ -94,6 +103,15 @@ _待发布_
 
     _待发布_
     
+  </Tab>
+
+  <Tab title="徐志衡">
+    ```python 02：简单的A*B问题 lines icon="python"
+    a = float(input())
+    b = float(input())
+    c = a * b
+    print(f'{c:.2f}')
+    ```
   </Tab>
 </Tabs>
 
@@ -144,6 +162,19 @@ _待发布_
     _待发布_
     
   </Tab>
+
+  <Tab title="徐志衡">
+    ```python 03：计算三角形的周长和面积(基础版) lines icon="python"
+    a = int(input())
+    b = int(input())
+    c = int(input())
+    x = float(a + b + c)
+    print(f'{x:.2f}')
+    p = x / 2
+    y = (p * (p - a) * (p - b) * (p - c)) ** 0.5
+    print(round(y))
+    ```
+  </Tab>
 </Tabs>
 
 ## 04：计算两点之间距离
@@ -187,6 +218,17 @@ _待发布_
 
     _待发布_
     
+  </Tab>
+
+  <Tab title="徐志衡">
+    ```python 04：计算两点之间距离 lines icon="python"
+    x1 = float(input())
+    x2 = float(input())
+    y1 = float(input())
+    y2 = float(input())
+    d = ((x1 - y1) ** 2 + (x2 - y2) ** 2) ** 0.5
+    print(f'{d:.2f}')
+    ```
   </Tab>
 </Tabs>
 
@@ -234,11 +276,28 @@ _待发布_
     _待发布_
     
   </Tab>
+
+  <Tab title="徐志衡">
+    ```python 05：字符菱形 lines icon="python"
+    # 获取输入字符
+    c = input()
+    # 字符串的乘法：字符串乘以数字x表示将字符串重复x次，如'abc' * 3 = 'abcabcabc'
+    """
+    # 字符串的center方法：字符串center(width, fillchar)方法返回一个原字符串居中,
+    并使用fillchar(默认空格)填充至长度 width 的新字符串
+    """
+    print(c.center(5, ' '))
+    print((c * 3).center(5, ' '))
+    print(c * 5)
+    print((c * 3).center(5, ' '))
+    print(c.center(5, ' '))
+    ```
+  </Tab>
 </Tabs>
 
 ---
 <div className="text-center text-xs text-gray-400 mt-10">
-  贡献者：陈旭峥  
-  上次修改：2025/09/24
+  贡献者：陈旭峥 徐志衡 
+  上次修改：2025/10/09
 </div>
 ---
