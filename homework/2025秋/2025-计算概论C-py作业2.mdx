@@ -1,8 +1,8 @@
 ## 题集链接
 <Card
-  title="OpenJudge/计算概论C(py)/2025-计算概论C-py作业1"
+  title="OpenJudge/计算概论C(py)/2025-计算概论C-py作业2"
   icon="code"
-  href="http://jgcq.openjudge.cn/2025jgchw1/"
+  href="http://jgcq.openjudge.cn/2025jgchw22/"
   arrow="true"
   horizontal
 >
@@ -34,7 +34,12 @@
 <Tabs>
   <Tab title="徐志衡">
     ```python 01：两整数求和 lines icon="python"
-
+    h = int(input())
+    h1 = h + 0.1 * 12
+    # **（幂运算）的运算符级别高于 *（乘法运算）,因此不需要对幂运算使用括号
+    h2 = h * (1 + 0.1) ** 12
+    print(f'{h1:.1f}')
+    print(f'{h2:.2f}')
     ```
   </Tab>
 </Tabs>
@@ -63,7 +68,11 @@
 <Tabs>
   <Tab title="徐志衡">
     ```python 02：秒转时分秒 lines icon="python"
-
+    a = int(input())
+    h = a // 3600
+    m = (a % 3600) // 60
+    s = a % 60
+    print(f'{h}:{m}:{s}')
     ```
   </Tab>
 </Tabs>
@@ -96,8 +105,25 @@
 
 <Tabs>
   <Tab title="徐志衡">
-    ```python 03：求三个数的和 lines icon="python"
-
+    ```python 03：求三个数的和 Solution 1 lines icon="python"
+    # Solution 1
+    # 使用 map 函数将输入的字符串转换为浮点数 float类型
+    x, y, z = map(float, input().split())
+    a = x + y + z
+    # 强烈推荐使用 is_integer() 方法判断浮点数是否为整数
+    if a.is_integer():
+        print(f'{a:.1f}')
+    else:
+        print(a)
+    ```
+    ```python 03：求三个数的和 Solution 2 lines icon="python"
+    # Solution 2
+    # 使用 for 循环将输入的若干个数字存储在列表中
+    l = [float(x) for x in input().split()]
+    # 使用 sum 函数计算列表中所有元素的和
+    a = sum(l)
+    # print()函数会自动将是整数的浮点数保留一位小数，因此对于本题不需要特判结果是否为整数
+    print(a)
     ```
   </Tab>
 </Tabs>
@@ -126,7 +152,8 @@ teacher assistance is so handsome
 <Tabs>
   <Tab title="徐志衡">
     ```python 04：计算句子中的单词个数 lines icon="python"
-
+    s = input().split()
+    print(len(s))
     ```
   </Tab>
 </Tabs>
@@ -154,8 +181,19 @@ teacher assistance is so handsome
 
 <Tabs>
   <Tab title="徐志衡">
-    ```python 05：反向输出一个三位数 lines icon="python"
-
+    ```python 05：反向输出一个三位数 Solution 1 lines icon="python"
+    # Solution 1
+    s = input()
+    # .reverse()是原地修改列表，然而字符串是不可变的，所以字符串没有.reverse()方法
+    # reversed()函数反转字符串会生成新的变量的迭代器，通过 .join()方法将字符拼接为字符串
+    t = "".join(reversed(s))
+    print(t)
+    ```
+    ```python 05：反向输出一个三位数 Solution 2 lines icon="python"
+    # Solution 2
+    s = input()
+    # 通过切片实现字符串的反转
+    print(s[::-1])
     ```
   </Tab>
 </Tabs>
@@ -184,7 +222,11 @@ teacher assistance is so handsome
 <Tabs>
   <Tab title="徐志衡">
     ```python 06：字符串中的整数求和 lines icon="python"
-
+    a, b = input().split()
+    # 通过切片取字符串前两位并用 int()函数转换为整数
+    x = int(a[:2])
+    y = int(b[:2])
+    print(x + y)
     ```
   </Tab>
 </Tabs>
@@ -215,7 +257,15 @@ teacher assistance is so handsome
 <Tabs>
   <Tab title="徐志衡">
     ```python 07：字母加密 lines icon="python"
-
+    c = input()
+    n = int(input())
+    # 字符 a-z 在 Unicode 中的编码是按顺序且连续排列的
+    # 先计算输入字符相对于字符 'a' 的偏移量
+    offset = ord(c) - ord('a')
+    # 再计算输入字符移动 n 步后的偏移量，因为是循环移动，所以需要取余数 26
+    newOffset = (offset + n) % 26
+    # 最后将偏移量加上字符 'a' 的编码，得到加密后的字符
+    print(chr(ord('a') + newOffset))
     ```
   </Tab>
 </Tabs>
@@ -223,7 +273,7 @@ teacher assistance is so handsome
 
 ---
 <div className="text-center text-xs text-gray-400 mt-10">
-  贡献者：陈旭峥  
+  贡献者：陈旭峥 徐志衡 
   上次修改：2025/10/16
 </div>
 ---
