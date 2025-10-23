@@ -1,0 +1,375 @@
+## 题集链接
+<Card
+  title="OpenJudge/计算概论C(py)/2025-计算概论C-py作业3"
+  icon="code"
+  href="http://jgcq.openjudge.cn/2025jgchw3/"
+  arrow="true"
+  horizontal
+>
+</Card>
+
+## 01：奇偶数判断
+
+### 题目描述
+给定一个整数，判断该数是奇数还是偶数。
+
+**输入**  
+输入仅一行，一个大于零的正整数n。
+
+**输出**  
+输出仅一行，如果n是奇数，输出odd；如果n是偶数，输出even。
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="分支结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 01：奇偶数判断 lines icon="python"
+    num = int(input())
+    if num % 2:
+        print("odd")
+    else:
+        print("even")
+    ```
+  </Tab>
+</Tabs>
+
+## 02：简单计算器
+
+### 题目描述
+
+一个最简单的计算器，支持+, -, *, / 四种运算。仅需考虑输入输出为整数的情况(除法结果就是商，忽略余数）
+
+**输入**  
+输入只有一行，共有三个参数，其中第1、2个参数为整数，第3个参数为操作符（+,-,*,/）。
+
+**输出**   
+输出只有一行，一个整数，为运算结果。然而：  
+1. 如果出现除数为0的情况，则输出：Divided by zero!   
+2. 如果出现无效的操作符(即不为 +, -, *, / 之一），则输出：Invalid operator!   
+
+### 题解
+**思路**  
+注意输出结尾的感叹号
+
+**知识点**  
+<ResponseField name="分支结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 02：简单计算器 lines icon="python"
+    num1, num2, op = input().split()
+    num1 = int(num1)
+    num2 = int(num2)
+    if op == "+":
+        print(num1 + num2)
+    elif op == "-":
+        print(num1 - num2)
+    elif op == "*":
+        print(num1 * num2)
+    elif op == "/":
+        if num2 == 0:
+            print("Divided by zero!")
+        else:
+            print(num1 // num2)
+    else:
+        print("Invalid operator!")
+    ```
+  </Tab>
+</Tabs>
+
+## 03：计算邮资
+
+### 题目描述
+
+根据邮件的重量和用户是否选择加急计算邮费。计算规则：重量在1000克以内(包括1000克), 基本费8元。超过1000克的部分，每500克加收超重费4元，不足500克部分按500克计算；如果用户选择加急，多收5元。
+
+**输入**  
+输入一行，包含整数和一个字符，以一个空格分开，分别表示重量（单位为克）和是否加急。如果字符是y，说明选择加急；如果字符是n，说明不加急。
+
+
+**输出**  
+输出一行，包含一个整数，表示邮费。
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="分支结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 03：计算邮资 lines icon="python"
+    weight, quick = input().split()
+    weight = int(weight)
+    price = 8
+    if quick == "y":
+        price += 5
+    if weight > 1000:
+        price += (weight - 1000 + 499) // 500 * 4
+    print(price)
+    ```
+  </Tab>
+</Tabs>
+
+## 04：奥运奖牌计数
+
+### 题目描述
+
+2008年北京奥运会，A国的运动员参与了n天的决赛项目(1≤n≤17)。现在要统计一下A国所获得的金、银、铜牌数目及总奖牌数。
+
+**输入**  
+输入n＋1行，第1行是A国参与决赛项目的天数n，其后n行，每一行是该国某一天获得的金、银、铜牌数目，以一个空格分开。
+
+**输出**  
+输出1行，包括4个整数，为A国所获得的金、银、铜牌总数及总奖牌数，以一个空格分开。
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="循环结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 04：奥运奖牌计数 lines icon="python"
+    n = int(input())
+    medals = [0, 0, 0]
+    for i in range(n):
+        medal = list(map(int, input().split()))
+        for j in range(3):
+            medals[j] += medal[j]
+    print(medals[0], medals[1], medals[2], sum(medals))
+    ```
+  </Tab>
+</Tabs>
+
+## 05：最长单词2
+
+### 题目描述
+
+一个以'.'结尾的简单英文句子，单词之间用空格分隔，没有缩写形式和其它特殊形式，求句子中的最长单词。
+
+**输入**  
+一个以'.'结尾的简单英文句子（长度不超过500），单词之间用空格分隔，没有缩写形式和其它特殊形式。
+
+**输出**  
+该句子中最长的单词。如果多于一个，则输出第一个
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="循环结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 05：最长单词2  lines icon="python"
+    words = input()[:-1].split()
+    longest = None
+    for word in words:
+        if longest is None or len(word) > len(longest):
+            longest = word
+    print(longest)
+    ```
+  </Tab>
+</Tabs>
+
+## 06：计算直角三角形面积
+
+### 题目描述
+
+可以多次输入三角形三边，在满足下述条件的时候，计算三角形面积，不满足条件的时候，给出相应的提示信息。程序结束的条件是，将三边均输成0，程序结束时给出提示信息。
+
+要求在一条input语句中输入三角形三边；
+
+计算三角形面积的条件是：三边能构成三角形，并且构成的三角形是直角三角形
+
+输入、输出范例：注意，输出的面积四舍五入保留小数点后一位，输入的三角形三边全为整数
+| 输入                |输出                     |
+|--------------------|------------------------|
+|1 2 5               | not triangle, please input again        |
+|1 1 1               | not right triangle, please input again  |
+|3 4 5               | 6.0, please input again                |
+|0 0 0               | program finished                        |
+
+**输入**  
+一行或多行，每行3个数字以空格分隔
+
+**输出**  
+对应的语句
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="循环结构 分支结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 06：计算直角三角形面积 lines icon="python"
+    while True:
+        tri = map(int, input().split())
+        a, b, c = sorted(tri)
+        if a == 0 and b == 0 and c == 0:
+            print("program finished")
+            break
+        elif a + b <= c:
+            print(f"not triangle, please input again")
+        elif a**2 + b**2 == c**2:
+            print(f"{a*b/2:.1f}, please input again")
+        else:
+            print(f"not right triangle, please input again")
+    ```
+  </Tab>
+</Tabs>
+
+## 07：正常血压
+
+### 题目描述
+
+监护室每小时测量一次病人的血压，若收缩压在90 - 140之间并且舒张压在60 - 90之间（包含端点值）则称之为正常，现给出某病人若干次测量的血压值，计算病人保持正常血压的最长小时数。   
+
+**输入**  
+第一行为一个正整数n，n < 100
+其后有n行，每行2个正整数，分别为一次测量的收缩压和舒张压，中间以一个空格分隔。 
+
+**输出**  
+输出仅一行，血压连续正常的最长小时数。
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="循环结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 07：正常血压 lines icon="python"
+    n = int(input())
+    current = 0
+    longest = 0
+    for _ in range(n):
+        a, b = map(int, input().split())
+        if 90 <= a <= 140 and 60 <= b <= 90:
+            current += 1
+            longest = max(longest, current)
+        else:
+            current = 0
+    print(longest)
+    ```
+  </Tab>
+</Tabs>
+
+## 08：找出全部子串位置
+
+### 题目描述
+
+输入两个串s1,s2，找出s2在s1中所有出现的位置
+
+两个子串的出现不能重叠。例如'aa'在 aaaa 里出现的位置只有0,2
+
+**输入**  
+第一行是整数n
+接下来有n行，每行两个不带空格的字符串s1,s2
+
+**输出**  
+对每行，从小到大输出s2在s1中所有的出现位置。位置从0开始算
+如果s2没出现过，输出 "no"
+行末多输出空格没关系
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="循环结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 08：找出全部子串位置 lines icon="python"
+    n = int(input())
+    for _ in range(n):
+        s1, s2 = input().split()
+        positions = []
+        i = 0
+        while i <= len(s1) - len(s2):
+            if s1[i : i + len(s2)] == s2:
+                positions.append(i)
+                i += len(s2)  # 不允许重叠
+            else:
+                i += 1
+        if positions:
+            print(*positions)  # print(*positions) 会自动以空格分隔输出。
+        else:
+            print("no")
+    ```
+  </Tab>
+</Tabs>
+
+
+## 09：打印数字三角形
+
+### 题目描述
+
+输入行数n(1  < = n < = 5)，打印出由n行数字组成的正实心三角形，每行的数字范围为[1,2*n-1],每行的数字之间没有空格。
+
+**输入**  
+输入只有一行，仅一个参数，即需要打印的行数n
+
+**输出**  
+由n行数字组成的正实心三角形
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="循环结构" type="第3章程序的控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="尹思源">
+    ```python 09：打印数字三角形 lines icon="python"
+    n = int(input())
+    for i in range(1, n + 1):
+        space = (n - i) * " "
+        num = [str(j) for j in range(1, i * 2)]
+        print(space + "".join(num))
+    ```
+  </Tab>
+</Tabs>
+
+
+---
+<div className="text-center text-xs text-gray-400 mt-10">
+  贡献者：尹思源
+  上次修改：2025/10/23
+</div>
+---
