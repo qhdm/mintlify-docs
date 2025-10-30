@@ -84,6 +84,18 @@
         print("Invalid operator!")
     ```
   </Tab>
+  <Tab title="钱丽艳">
+  ```python 02：简单计算器 lines icon="python"
+  s = input().split()
+  x, y, op = s[0], s[1], s[2]
+  if int(y) == 0 and op == "/":
+      print("Divided by zero!") 
+  elif op not in ["+", "-", "*", "/"]:
+      print("Invalid operator!")
+  else:
+      print(int(eval(x + op + y)))
+  ```
+  </Tab>
 </Tabs>
 
 ## 03：计算邮资
