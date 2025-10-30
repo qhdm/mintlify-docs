@@ -379,6 +379,22 @@
             print("no")
     ```
   </Tab>
+   <Tab title="钱丽艳">
+    ```python 08：找出全部子串位置 lines icon="python"
+    n = int(input())
+    for i in range(1, n + 1):
+        s1, s2 = input().split()
+        start, end = 0, len(s1)
+        if s2 in s1:
+            while s1.find(s2, start, end) != -1:
+                idn = s1.find(s2, start, end)  # sub如果包含在 str[strat:end] 中返回sub开始的索引值，否则返回-1
+                print(idn, end=" ")
+                start = idn + len(s2)
+            print()
+        else:
+            print("no")
+    ```
+  </Tab>
 </Tabs>
 
 
