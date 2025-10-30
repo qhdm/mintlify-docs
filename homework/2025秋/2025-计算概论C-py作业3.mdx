@@ -133,6 +133,18 @@
     print(price)
     ```
   </Tab>
+  <Tab title="尹思源">
+    ```python 03：计算邮资 lines icon="python"
+    s = input().split()
+    weight, urgent = int(s[0]), s[1]
+    money = 8
+    if urgent.lower() == "y":
+        money += 5
+    if weight > 1000:
+        money += math.ceil((weight - 1000) / 500) * 4  # math.ceil()为向上取整函数
+    print(money)
+    ```
+  </Tab>
 </Tabs>
 
 ## 04：奥运奖牌计数
