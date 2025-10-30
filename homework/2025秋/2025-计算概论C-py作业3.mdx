@@ -84,6 +84,18 @@
         print("Invalid operator!")
     ```
   </Tab>
+  <Tab title="钱丽艳">
+  ```python 02：简单计算器 lines icon="python"
+  s = input().split()
+  x, y, op = s[0], s[1], s[2]
+  if int(y) == 0 and op == "/":
+      print("Divided by zero!") 
+  elif op not in ["+", "-", "*", "/"]:
+      print("Invalid operator!")
+  else:
+      print(int(eval(x + op + y)))
+  ```
+  </Tab>
 </Tabs>
 
 ## 03：计算邮资
@@ -121,6 +133,18 @@
     print(price)
     ```
   </Tab>
+  <Tab title="钱丽艳">
+    ```python 03：计算邮资 lines icon="python"
+    s = input().split()
+    weight, urgent = int(s[0]), s[1]
+    money = 8
+    if urgent.lower() == "y":
+        money += 5
+    if weight > 1000:
+        money += math.ceil((weight - 1000) / 500) * 4  # math.ceil()为向上取整函数
+    print(money)
+    ```
+  </Tab>
 </Tabs>
 
 ## 04：奥运奖牌计数
@@ -156,6 +180,19 @@
     print(medals[0], medals[1], medals[2], sum(medals))
     ```
   </Tab>
+  <Tab title="钱丽艳">
+    ```python 04：奥运奖牌计数 lines icon="python"
+    num = int(input())
+    sumGN = sumSN = sumCN = 0
+    for i in range(num):
+        strN = input().split()
+        sumGN += int(strN[0])
+        sumSN += int(strN[1])
+        sumCN += int(strN[2])
+    sumN = sumGN + sumSN + sumCN
+    print(f"{sumGN} {sumSN} {sumCN} {sumN}")
+    ```
+  </Tab>
 </Tabs>
 
 ## 05：最长单词2
@@ -188,6 +225,18 @@
         if longest is None or len(word) > len(longest):
             longest = word
     print(longest)
+    ```
+  </Tab>
+  <Tab title="钱丽艳">
+    ```python 05：最长单词2  lines icon="python"
+    sentence = input().split()
+    lWord = ""
+    for i in sentence:                  # sentence为列表类型
+        if i == sentence[-1]:           # 如果为最后一个单词，需要去掉结尾的“.”
+            i = i.replace(i[-1], "")    # i.replace()是i的副本，所以要赋值给i，i才会变化
+        if len(i) > len(lWord):
+            lWord = i
+    print(lWord)
     ```
   </Tab>
 </Tabs>
@@ -330,6 +379,22 @@
             print("no")
     ```
   </Tab>
+   <Tab title="钱丽艳">
+    ```python 08：找出全部子串位置 lines icon="python"
+    n = int(input())
+    for i in range(1, n + 1):
+        s1, s2 = input().split()
+        start, end = 0, len(s1)
+        if s2 in s1:
+            while s1.find(s2, start, end) != -1:
+                idn = s1.find(s2, start, end)  # sub如果包含在 str[strat:end] 中返回sub开始的索引值，否则返回-1
+                print(idn, end=" ")
+                start = idn + len(s2)
+            print()
+        else:
+            print("no")
+    ```
+  </Tab>
 </Tabs>
 
 
@@ -362,6 +427,17 @@
         space = (n - i) * " "
         num = [str(j) for j in range(1, i * 2)]
         print(space + "".join(num))
+    ```
+  </Tab>
+  <Tab title="钱丽艳">
+    ```python 09：打印数字三角形 lines icon="python"
+    n = int(input())
+    for i in range(1, n+1):
+        for j in range(1, n-i+1):  # 打空格。 空格的个数：(一行总字符数-一行数字字符数)/2=((2*n-1)-(2*i-1))/2=n-i
+            print(" ", end="")    
+        for j in range(1, 2*i):    # 打数字
+            print(j, end="")       
+        print("")
     ```
   </Tab>
 </Tabs>

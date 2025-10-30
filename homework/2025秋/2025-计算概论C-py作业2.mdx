@@ -270,6 +270,20 @@ teacher assistance is so handsome
   </Tab>
 </Tabs>
 
+<Tabs>
+  <Tab title="钱丽艳">
+    ```python 07：字母加密 lines icon="python"
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    key = int(input())
+    cha = input()
+    pos = alphabet.find(cha)
+    pos = (pos + key) % len(alphabet)   # 求模的目的：处理加上密钥后的位置超出26的情况
+    new_char = alphabet[pos]   # 索引方式访问字符串
+    print(new_char)
+    ```
+  </Tab>
+</Tabs>
+
 
 ---
 <div className="text-center text-xs text-gray-400 mt-10">
