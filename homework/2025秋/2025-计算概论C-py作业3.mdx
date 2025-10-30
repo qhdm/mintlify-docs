@@ -227,6 +227,18 @@
     print(longest)
     ```
   </Tab>
+  <Tab title="钱丽艳">
+    ```python 05：最长单词2  lines icon="python"
+    sentence = input().split()
+    lWord = ""
+    for i in sentence:                  # sentence为列表类型
+        if i == sentence[-1]:           # 如果为最后一个单词，需要去掉结尾的“.”
+            i = i.replace(i[-1], "")    # i.replace()是i的副本，所以要赋值给i，i才会变化
+        if len(i) > len(lWord):
+            lWord = i
+    print(lWord)
+    ```
+  </Tab>
 </Tabs>
 
 ## 06：计算直角三角形面积
