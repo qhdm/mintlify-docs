@@ -180,6 +180,19 @@
     print(medals[0], medals[1], medals[2], sum(medals))
     ```
   </Tab>
+  <Tab title="钱丽艳">
+    ```python 04：奥运奖牌计数 lines icon="python"
+    num = int(input())
+    sumGN = sumSN = sumCN = 0
+    for i in range(num):
+        strN = input().split()
+        sumGN += int(strN[0])
+        sumSN += int(strN[1])
+        sumCN += int(strN[2])
+    sumN = sumGN + sumSN + sumCN
+    print(f"{sumGN} {sumSN} {sumCN} {sumN}")
+    ```
+  </Tab>
 </Tabs>
 
 ## 05：最长单词2
