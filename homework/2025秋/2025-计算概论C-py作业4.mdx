@@ -1,0 +1,344 @@
+## 题集链接
+<Card
+  title="OpenJudge/计算概论C(py)/2025-计算概论C-py作业4"
+  icon="code"
+  href="http://jgcq.openjudge.cn/2025jgchw4"
+  arrow="true"
+  horizontal
+>
+</Card>
+
+## 01：数列求和
+
+### 题目描述
+对数列进行求和。给定一个整数 n，当 n 为偶数时，计算 1/2 + 1/4 + ...... + 1/n 的和；当 n 为奇数时，计算 1/1 + 1/3 + ...... + 1/n 的和。
+
+要求使用函数实现。
+
+**输入**
+一个整数 n ($ 0 < n \le 1000 $)
+**输出**
+一个浮点数表示数列的和，保留 6 位小数
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="函数的定义与调用" type="第4章函数">
+</ResponseField>
+<ResponseField name="函数的参数" type="第4章函数">
+</ResponseField>
+<ResponseField name="函数的返回值" type="第4章函数">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="徐志衡">
+    ```python 01：数列求和 lines icon="python"
+    def seriesSum(n):
+        sumV = 0
+        # 倒序遍历求和，设置步长为 -2，无须判断 n 的奇偶性
+        for i in range(n, 0, -2):
+            sumV += 1 / i
+        return sumV
+
+
+    n = int(input())
+    sumV = seriesSum(n)
+    print(f'{sumV:.6f}')
+    ```
+  </Tab>
+</Tabs>
+
+## 02：删除子串
+
+### 题目描述
+有两个非空字符串，一个长的字符串，一个短的字符串。现在要在长串中查找并删除短串，打印处理后的结果。一个额外的参数表示全部删除子串或者至多删除一次。查找时从左到右查找，找到的子串不允许重叠（参见样例3）。
+
+要求使用函数实现。
+
+**输入**
+输入只有一行，共三项，用空格隔开。前两个是字符串，分别是长字符串和短字符串。前者长度大于等于后者的长度，且字符串中不包含空白符。还有一个整数 n，取值为 0 或 1，0 表示至多删除一次，1 表示全部删除。
+**输出**
+如果短串包含在长串中，则打印处理后的字符串，否则打印 "Fail to delete"
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="程序的分支结构" type="第3章程序控制结构">
+</ResponseField>
+<ResponseField name="函数的定义与调用" type="第4章函数">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="徐志衡">
+    ```python 02：删除子串 lines icon="python"
+    def strFindDel(s, t, n):
+        if t in s:
+            if n == 0:
+                '''
+                OJ 平台的 Python 解释器版本为 3.8，不能写
+                return s.replace(t, '', __count=1)，
+                Python 3.12 开始支持这种写法
+                '''
+                '''
+                最后的数字表示替换前多少个，不给出最后的数字
+                或者给出 -1 表示替换所有
+                '''
+                return s.replace(t, '', 1)
+            else:
+                return s.replace(t, '')
+        else:
+            return 'Fail to delete'
+
+
+    s, t, n = input().split()
+    n = int(n)
+    print(strFindDel(s, t, n))
+    ```
+  </Tab>
+</Tabs>
+
+## 03：机器猜数
+
+### 题目描述
+随机选择 1 ～100 的一个整数 n，通过某种规则判断这个数 n 是多少。
+
+规则如下：给定当前的数字范围[a, b]，选择其中间的数 m=(a+b)/2，判断 m 和 n 的大小关系。如果 m = n，则表示猜对了，如果 m > n，则在 [a, m-1] 中继续判断，如果 m < n，则在 [m+1, b] 中继续判断。如果数字范围 [a, b] 的中间数 m 不是整数，则向上取整，例如 [1, 4]，则 m = 3。如果数字范围满足 a = b，那么数 n 一定满足 n = a = b，此时不需要继续猜数。
+
+初始的数字范围是 [1, 100]。现在有一个猜数机器，按照上述的规则进行猜数，那么这个猜数机器需要猜几次？
+
+**输入**
+一个整数，范围是 1 ～ 100（包含1和100）
+**输出**
+一个整数，表示按照题目的规则猜数，猜对结果时总共猜数的次数。
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="程序的循环结构" type="第3章程序控制结构">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="徐志衡">
+    ```python 03：机器猜数 lines icon="python"
+    n = int(input())
+    l = 1
+    r = 100
+    cnt = 0
+    # 根据题意，当 l == r 时，此时 n == l == r，不需要继续猜数
+    while l < r:
+        # 先 +1 再 // 2，可以实现向上取整
+        m = (l + r + 1) // 2
+        cnt += 1
+        if m == n:
+            # 猜中直接输出结果并结束程序
+            print(cnt)
+            exit()
+        elif m > n:
+            r = m - 1
+        else:
+            l = m + 1
+    print(cnt)
+    ```
+  </Tab>
+</Tabs>
+
+## 04：自动判题
+
+### 题目描述
+自动判断一个简单的数学等式是否成立。这里的数学等式是两个数的四则运算（加，减，乘，除）。参与运算的数是浮点数，结果保留两位小数。
+
+**输入**
+一个等式。数字和运算符之间没有空格。等式左边的两个数是非负数，右边的结果仅仅保留两位小数。
+**输出**
+一个字符串，true 或者 false
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="字符串类型" type="第2章基本数据类型">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="徐志衡">
+    ```python 04：自动判题 Solution 1 lines icon="python"
+    # Solution 1
+    import math
+
+    # 按 '=' 分割输入的表达式和结果
+    exp, res = input().split('=')
+    res = float(res)
+    # 用 eval() 函数计算表达式的值
+    ans = float(eval(exp))
+    # 用 round() 函数将计算结果保留两位小数
+    ans = round(ans, 2)
+    # 由于浮点数存储精度问题，不能使用 '==' 判断两个浮点数是否相等
+    # 使用 math.isclose() 函数判断计算结果是否与给定结果在指定精度内相等
+    if math.isclose(ans, res):
+        print('true')
+    else:
+        print('false')
+    ```
+    ```python 04：自动判题 Solution 2 lines icon="python"
+    # Solution 2
+    import math
+
+    # 按 '=' 分割输入的表达式和结果
+    exp, res = input().split('=')
+    res = float(res)
+    # 如果表达式以 '-' 开头，则将第一个数字设为负数
+    isNegative = False
+    if exp[0] == '-':
+        isNegative = True
+        # 先去除开始的 '-' 号，防止后续对操作符的判断产生影响
+        exp = exp[1:]
+    # 按 '+'、'-'、'*'、'/' 分割表达式，获取操作符和操作数
+    a, b, op = None, None, None
+    for c in '+-*/':
+        if c in exp:
+            a, b = map(float, exp.split(c))
+            op = c
+            break
+    # 如果原表达式最开始有 '-' 号，则将第一个数设为负数
+    if isNegative:
+        a = -a
+    # 根据操作符计算结果
+    ans = None
+    if op == '+':
+        ans = a + b
+    elif op == '-':
+        ans = a - b
+    elif op == '*':
+        ans = a * b
+    elif op == '/':
+        ans = a / b
+    # 用 round() 函数将计算结果保留两位小数
+    ans = round(ans, 2)
+    # 由于浮点数存储精度问题，不能使用 '==' 判断两个浮点数是否相等
+    # 使用 math.isclose() 函数判断计算结果是否与给定结果在指定精度内相等
+    if math.isclose(ans, res):
+        print('true')
+    else:
+        print('false')
+    ```
+    ```python 04：自动判题 Solution 3 lines icon="python"
+    # Solution 3
+    import re
+    import math
+
+    a, b, op, res = None, None, None, None
+    # 用正则表达式获取操作符、操作数和计算结果
+    match = re.match(r'^(-?\d+(?:\.\d+)?)([+\-*/])(\d+(?:\.\d+)?)=(-?\d+(?:\.\d+)?)$', input())
+    if match:
+        a, op, b, res = match.groups()
+        a, b, res = float(a), float(b), float(res)
+    # 根据操作符计算结果
+    ans = None
+    if op == '+':
+        ans = a + b
+    elif op == '-':
+        ans = a - b
+    elif op == '*':
+        ans = a * b
+    elif op == '/':
+        ans = a / b
+    # 用 round() 函数将计算结果保留两位小数
+    ans = round(ans, 2)
+    # 由于浮点数存储精度问题，不能使用 '==' 判断两个浮点数是否相等
+    # 使用 math.isclose() 函数判断计算结果是否与给定结果在指定精度内相等
+    if math.isclose(ans, res):
+        print('true')
+    else:
+        print('false')
+    ```
+  </Tab>
+</Tabs>
+
+## 05：凯撒密码
+
+### 题目描述
+对字母和数字进行加密和解密。密钥是一个数字，用于加密和解密。
+
+要求使用函数实现。
+
+**输入**
+输入有三行，每行一项，分别是模式、密钥、需要处理的信息。
+第一行为模式，可能是 e, E, encrypt, Encrypt (这四个表示加密), d, D, decrypt, Decrypt (这四个表示解密), 或者是其他字符串。
+第二行为密钥，是一个大于 0 且小于等于 26 的整数。
+第三行为需要处理的信息，是一个字符串。
+**输出**
+如果模式表示加密或解密，则输出一个字符串，表示加密信息或解密信息。
+如果模式既不是加密或解密，那么不论密钥和需要处理的信息是什么，都输出 "Wrong Mode"。
+
+### 题解
+**思路**  
+
+
+**知识点**  
+<ResponseField name="分支结构" type="第3章程序的控制结构">
+</ResponseField>
+<ResponseField name="函数的定义与调用" type="第4章函数">
+</ResponseField>
+**代码**  
+
+<Tabs>
+  <Tab title="徐志衡">
+    ```python 05：凯撒密码 lines icon="python"
+    def transform(c, key, base, round_len):
+        """
+        Python 中字符用 Unicode编码表示
+        用 ord() 函数获取字符的 Unicode 编码
+        用 chr() 函数获取 Unicode 编码对应的字符
+        '0-9' 的 Unicode 编码范围是 48-57
+        'A-Z' 的 Unicode 编码范围是 65-90
+        'a-z' 的 Unicode 编码范围是 97-122
+        """
+        base = ord(base)
+        offset = ord(c) - base
+        new_offset = (offset + key) % round_len
+        return chr(base + new_offset)
+
+
+    mode = input()
+    # 不是加密或解密的情况
+    if mode not in ['e', 'E', 'encrypt', 'Encrypt', 'd', 'D', 'decrypt', 'Decrypt']:
+        print('Wrong Mode')
+        exit()
+    key = int(input())
+    # 解密相当于加密的逆运算，把 key 取负就能统一运算
+    if mode in ['d', 'D', 'decrypt', 'Decrypt']:
+        key = -key
+    msg = input()
+    ans = []
+    for i in range(len(msg)):
+        if msg[i].isupper():
+            ans.append(transform(msg[i], key, 'A', 26))
+        elif msg[i].islower():
+            ans.append(transform(msg[i], key, 'a', 26))
+        elif msg[i].isdigit():
+            ans.append(transform(msg[i], key, '0', 10))
+        else:
+            ans.append(msg[i])
+    print(''.join(ans))
+    ```
+  </Tab>
+</Tabs>
+
+
+---
+<div className="text-center text-xs text-gray-400 mt-10">
+  贡献者：徐志衡 
+  上次修改：2025/10/30
+</div>
+---
